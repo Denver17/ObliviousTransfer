@@ -1,0 +1,33 @@
+
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.examples.SimplestOT";
+option java_outer_classname = "SimplestOTProto";
+option objc_class_prefix = "HLW";
+
+package SimplestOT;
+
+service OT {
+  rpc SendA (ARequest) returns (BReply) {}
+
+  rpc SendCipherText (CTRequest) returns (CTReply) {}
+
+}
+
+
+message ARequest {
+  string A = 1;
+}
+
+message CTRequest {
+  bytes ct = 1;
+}
+
+message BReply {
+  string B = 1;
+}
+
+message CTReply {
+  string message = 1;
+}

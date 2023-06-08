@@ -1,0 +1,2 @@
+# Hashes of file build rules.
+34467e07695f9f820a79ff587385e4ec SimplestOT.pb.cc
