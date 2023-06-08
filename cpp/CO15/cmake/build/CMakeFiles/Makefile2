@@ -54,10 +54,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/denver/ot/Oblivious_Transfer/cpp/CO15
+CMAKE_SOURCE_DIR = /home/denver/ot/ObliviousTransfer/cpp/CO15
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/denver/ot/Oblivious_Transfer/cpp/CO15/cmake/build
+CMAKE_BINARY_DIR = /home/denver/ot/ObliviousTransfer/cpp/CO15/cmake/build
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -85,14 +85,14 @@ clean: CMakeFiles/SimplestOT_chooser.dir/clean
 CMakeFiles/hw_grpc_proto.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw_grpc_proto.dir/build.make CMakeFiles/hw_grpc_proto.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw_grpc_proto.dir/build.make CMakeFiles/hw_grpc_proto.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/denver/ot/Oblivious_Transfer/cpp/CO15/cmake/build/CMakeFiles --progress-num=5,6,7,8 "Built target hw_grpc_proto"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/denver/ot/ObliviousTransfer/cpp/CO15/cmake/build/CMakeFiles --progress-num=5,6,7,8,9 "Built target hw_grpc_proto"
 .PHONY : CMakeFiles/hw_grpc_proto.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/hw_grpc_proto.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/denver/ot/Oblivious_Transfer/cpp/CO15/cmake/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/denver/ot/ObliviousTransfer/cpp/CO15/cmake/build/CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/hw_grpc_proto.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/denver/ot/Oblivious_Transfer/cpp/CO15/cmake/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/denver/ot/ObliviousTransfer/cpp/CO15/cmake/build/CMakeFiles 0
 .PHONY : CMakeFiles/hw_grpc_proto.dir/rule
 
 # Convenience name for target.
@@ -111,14 +111,14 @@ CMakeFiles/hw_grpc_proto.dir/clean:
 CMakeFiles/SimplestOT_sender.dir/all: CMakeFiles/hw_grpc_proto.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimplestOT_sender.dir/build.make CMakeFiles/SimplestOT_sender.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimplestOT_sender.dir/build.make CMakeFiles/SimplestOT_sender.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/denver/ot/Oblivious_Transfer/cpp/CO15/cmake/build/CMakeFiles --progress-num=3,4 "Built target SimplestOT_sender"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/denver/ot/ObliviousTransfer/cpp/CO15/cmake/build/CMakeFiles --progress-num=3,4 "Built target SimplestOT_sender"
 .PHONY : CMakeFiles/SimplestOT_sender.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/SimplestOT_sender.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/denver/ot/Oblivious_Transfer/cpp/CO15/cmake/build/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/denver/ot/ObliviousTransfer/cpp/CO15/cmake/build/CMakeFiles 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/SimplestOT_sender.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/denver/ot/Oblivious_Transfer/cpp/CO15/cmake/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/denver/ot/ObliviousTransfer/cpp/CO15/cmake/build/CMakeFiles 0
 .PHONY : CMakeFiles/SimplestOT_sender.dir/rule
 
 # Convenience name for target.
@@ -137,14 +137,14 @@ CMakeFiles/SimplestOT_sender.dir/clean:
 CMakeFiles/SimplestOT_chooser.dir/all: CMakeFiles/hw_grpc_proto.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimplestOT_chooser.dir/build.make CMakeFiles/SimplestOT_chooser.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimplestOT_chooser.dir/build.make CMakeFiles/SimplestOT_chooser.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/denver/ot/Oblivious_Transfer/cpp/CO15/cmake/build/CMakeFiles --progress-num=1,2 "Built target SimplestOT_chooser"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/denver/ot/ObliviousTransfer/cpp/CO15/cmake/build/CMakeFiles --progress-num=1,2 "Built target SimplestOT_chooser"
 .PHONY : CMakeFiles/SimplestOT_chooser.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/SimplestOT_chooser.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/denver/ot/Oblivious_Transfer/cpp/CO15/cmake/build/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/denver/ot/ObliviousTransfer/cpp/CO15/cmake/build/CMakeFiles 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/SimplestOT_chooser.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/denver/ot/Oblivious_Transfer/cpp/CO15/cmake/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/denver/ot/ObliviousTransfer/cpp/CO15/cmake/build/CMakeFiles 0
 .PHONY : CMakeFiles/SimplestOT_chooser.dir/rule
 
 # Convenience name for target.

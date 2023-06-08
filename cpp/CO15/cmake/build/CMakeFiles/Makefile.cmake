@@ -11,7 +11,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.22.1/CMakeCCompiler.cmake"
   "CMakeFiles/3.22.1/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.22.1/CMakeSystem.cmake"
-  "/home/denver/ot/Oblivious_Transfer/cpp/cmake/common.cmake"
+  "/home/denver/ot/ObliviousTransfer/cpp/cmake/common.cmake"
   "/usr/local/lib/cmake/absl/abslConfig.cmake"
   "/usr/local/lib/cmake/absl/abslConfigVersion.cmake"
   "/usr/local/lib/cmake/absl/abslTargets-noconfig.cmake"

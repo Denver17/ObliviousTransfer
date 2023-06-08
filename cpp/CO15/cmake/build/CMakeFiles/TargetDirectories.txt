@@ -1,5 +1,5 @@
-/home/denver/ot/Oblivious_Transfer/cpp/CO15/cmake/build/CMakeFiles/hw_grpc_proto.dir
-/home/denver/ot/Oblivious_Transfer/cpp/CO15/cmake/build/CMakeFiles/SimplestOT_sender.dir
-/home/denver/ot/Oblivious_Transfer/cpp/CO15/cmake/build/CMakeFiles/SimplestOT_chooser.dir
-/home/denver/ot/Oblivious_Transfer/cpp/CO15/cmake/build/CMakeFiles/edit_cache.dir
-/home/denver/ot/Oblivious_Transfer/cpp/CO15/cmake/build/CMakeFiles/rebuild_cache.dir
+/home/denver/ot/ObliviousTransfer/cpp/CO15/cmake/build/CMakeFiles/hw_grpc_proto.dir
+/home/denver/ot/ObliviousTransfer/cpp/CO15/cmake/build/CMakeFiles/SimplestOT_sender.dir
+/home/denver/ot/ObliviousTransfer/cpp/CO15/cmake/build/CMakeFiles/SimplestOT_chooser.dir
+/home/denver/ot/ObliviousTransfer/cpp/CO15/cmake/build/CMakeFiles/edit_cache.dir
+/home/denver/ot/ObliviousTransfer/cpp/CO15/cmake/build/CMakeFiles/rebuild_cache.dir

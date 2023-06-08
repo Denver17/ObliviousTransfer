@@ -1,0 +1,2 @@
+/usr/bin/ar qc libaes_lib.a CMakeFiles/aes_lib.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.cc.o
+/usr/bin/ranlib libaes_lib.a

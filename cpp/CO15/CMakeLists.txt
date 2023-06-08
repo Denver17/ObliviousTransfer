@@ -1,4 +1,3 @@
-
 cmake_minimum_required(VERSION 3.8)
 
 project(SimplestOT C CXX)
@@ -10,12 +9,14 @@ get_filename_component(hw_proto "../../protos/SimplestOT.proto" ABSOLUTE)
 get_filename_component(hw_proto_path "${hw_proto}" PATH)
 
 # Generated sources
+set(hw_aes_srcs "../../../CryptoTools/aes.cc")
+set(hw_aes_hdrs "../../../CryptoTools/aes.h")
 set(hw_proto_srcs "${CMAKE_CURRENT_BINARY_DIR}/SimplestOT.pb.cc")
 set(hw_proto_hdrs "${CMAKE_CURRENT_BINARY_DIR}/SimplestOT.pb.h")
 set(hw_grpc_srcs "${CMAKE_CURRENT_BINARY_DIR}/SimplestOT.grpc.pb.cc")
 set(hw_grpc_hdrs "${CMAKE_CURRENT_BINARY_DIR}/SimplestOT.grpc.pb.h")
 add_custom_command(
-      OUTPUT "${hw_proto_srcs}" "${hw_proto_hdrs}" "${hw_grpc_srcs}" "${hw_grpc_hdrs}"
+      OUTPUT "${hw_proto_srcs}" "${hw_proto_hdrs}" "${hw_grpc_srcs}" "${hw_grpc_hdrs}" "${hw_aes_srcs}" "${hw_aes_hdrs}"
       COMMAND ${_PROTOBUF_PROTOC}
       ARGS --grpc_out "${CMAKE_CURRENT_BINARY_DIR}"
         --cpp_out "${CMAKE_CURRENT_BINARY_DIR}"
@@ -32,11 +33,18 @@ add_library(hw_grpc_proto
   ${hw_grpc_srcs}
   ${hw_grpc_hdrs}
   ${hw_proto_srcs}
-  ${hw_proto_hdrs})
+  ${hw_proto_hdrs}
+  ${hw_aes_srcs}
+  ${hw_aes_hdrs})
 target_link_libraries(hw_grpc_proto
   ${_REFLECTION}
   ${_GRPC_GRPCPP}
   ${_PROTOBUF_LIBPROTOBUF})
+
+# # AES library
+# add_library(aes_lib
+#   ../CryptoTools/aes.cc)  # 添加 aes.cc 文件到 aes_lib 库
+# target_include_directories(aes_lib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/CryptoTools)  # 设置 aes_lib 的头文件路径
 
 # Targets SimplestOT_[async_](sender|chooser)
 foreach(_target

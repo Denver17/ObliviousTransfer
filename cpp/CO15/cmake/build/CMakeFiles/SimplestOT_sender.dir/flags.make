@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = -DCARES_STATICLIB
 
-CXX_INCLUDES = -I/home/denver/ot/Oblivious_Transfer/cpp/CO15/cmake/build
+CXX_INCLUDES = -I/home/denver/ot/ObliviousTransfer/cpp/CO15/cmake/build
 
 CXX_FLAGS = 
 

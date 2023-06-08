@@ -1,7 +1,7 @@
 CMakeFiles/hw_grpc_proto.dir/SimplestOT.grpc.pb.cc.o: \
- /home/denver/ot/Oblivious_Transfer/cpp/CO15/cmake/build/SimplestOT.grpc.pb.cc \
+ /home/denver/ot/ObliviousTransfer/cpp/CO15/cmake/build/SimplestOT.grpc.pb.cc \
  /usr/include/stdc-predef.h \
- /home/denver/ot/Oblivious_Transfer/cpp/CO15/cmake/build/SimplestOT.pb.h \
+ /home/denver/ot/ObliviousTransfer/cpp/CO15/cmake/build/SimplestOT.pb.h \
  /usr/include/c++/11/limits \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -419,7 +419,7 @@ CMakeFiles/hw_grpc_proto.dir/SimplestOT.grpc.pb.cc.o: \
  /usr/local/include/google/protobuf/map.h \
  /usr/local/include/google/protobuf/map_type_handler.h \
  /usr/local/include/google/protobuf/extension_set.h \
- /home/denver/ot/Oblivious_Transfer/cpp/CO15/cmake/build/SimplestOT.grpc.pb.h \
+ /home/denver/ot/ObliviousTransfer/cpp/CO15/cmake/build/SimplestOT.grpc.pb.h \
  /usr/local/include/grpcpp/generic/async_generic_service.h \
  /usr/local/include/grpc/support/port_platform.h \
  /usr/include/linux/version.h \

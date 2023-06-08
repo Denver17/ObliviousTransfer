@@ -1,5 +1,5 @@
 CMakeFiles/SimplestOT_sender.dir/SimplestOT_sender.cc.o: \
- /home/denver/ot/Oblivious_Transfer/cpp/CO15/SimplestOT_sender.cc \
+ /home/denver/ot/ObliviousTransfer/cpp/CO15/SimplestOT_sender.cc \
  /usr/include/stdc-predef.h /usr/local/include/NTL/ZZ.h \
  /usr/local/include/NTL/lip.h /usr/local/include/NTL/ctools.h \
  /usr/local/include/NTL/config.h /usr/local/include/NTL/mach_desc.h \
@@ -201,9 +201,10 @@ CMakeFiles/SimplestOT_sender.dir/SimplestOT_sender.cc.o: \
  /usr/include/c++/11/bits/unique_ptr.h /usr/include/c++/11/tuple \
  /usr/include/c++/11/array /usr/include/c++/11/bits/uses_allocator.h \
  /usr/include/c++/11/bits/invoke.h \
- /usr/include/c++/11/bits/quoted_string.h /usr/include/openssl/aes.h \
- /usr/include/openssl/rand.h /usr/include/c++/11/stdlib.h \
- /usr/include/openssl/types.h \
+ /usr/include/c++/11/bits/quoted_string.h \
+ /home/denver/ot/ObliviousTransfer/cpp/CO15/../CryptoTools/aes.h \
+ /usr/include/openssl/aes.h /usr/include/openssl/rand.h \
+ /usr/include/c++/11/stdlib.h /usr/include/openssl/types.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h \
  /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
@@ -409,8 +410,8 @@ CMakeFiles/SimplestOT_sender.dir/SimplestOT_sender.cc.o: \
  /usr/local/include/grpcpp/security/authorization_policy_provider.h \
  /usr/local/include/grpcpp/server_posix.h \
  /usr/local/include/grpcpp/version_info.h \
- /home/denver/ot/Oblivious_Transfer/cpp/CO15/cmake/build/SimplestOT.grpc.pb.h \
- /home/denver/ot/Oblivious_Transfer/cpp/CO15/cmake/build/SimplestOT.pb.h \
+ /home/denver/ot/ObliviousTransfer/cpp/CO15/cmake/build/SimplestOT.grpc.pb.h \
+ /home/denver/ot/ObliviousTransfer/cpp/CO15/cmake/build/SimplestOT.pb.h \
  /usr/local/include/google/protobuf/port_def.inc \
  /usr/local/include/google/protobuf/port_undef.inc \
  /usr/local/include/google/protobuf/io/coded_stream.h \

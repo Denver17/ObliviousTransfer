@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/denver/ot/Oblivious_Transfer/cpp/CO15
+CMAKE_SOURCE_DIR = /home/denver/ot/ObliviousTransfer/cpp/CO15
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/denver/ot/Oblivious_Transfer/cpp/CO15/cmake/build
+CMAKE_BINARY_DIR = /home/denver/ot/ObliviousTransfer/cpp/CO15/cmake/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/denver/ot/Oblivious_Transfer/cpp/CO15/cmake/build/CMakeFiles /home/denver/ot/Oblivious_Transfer/cpp/CO15/cmake/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/denver/ot/ObliviousTransfer/cpp/CO15/cmake/build/CMakeFiles /home/denver/ot/ObliviousTransfer/cpp/CO15/cmake/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/denver/ot/Oblivious_Transfer/cpp/CO15/cmake/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/denver/ot/ObliviousTransfer/cpp/CO15/cmake/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -251,6 +251,30 @@ SimplestOT_sender.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimplestOT_sender.dir/build.make CMakeFiles/SimplestOT_sender.dir/SimplestOT_sender.cc.s
 .PHONY : SimplestOT_sender.cc.s
 
+home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.o: home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.cc.o
+.PHONY : home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.o
+
+# target to build an object file
+home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw_grpc_proto.dir/build.make CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.cc.o
+.PHONY : home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.cc.o
+
+home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.i: home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.cc.i
+.PHONY : home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.i
+
+# target to preprocess a source file
+home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw_grpc_proto.dir/build.make CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.cc.i
+.PHONY : home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.cc.i
+
+home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.s: home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.cc.s
+.PHONY : home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.s
+
+# target to generate assembly for a file
+home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw_grpc_proto.dir/build.make CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.cc.s
+.PHONY : home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -274,6 +298,9 @@ help:
 	@echo "... SimplestOT_sender.o"
 	@echo "... SimplestOT_sender.i"
 	@echo "... SimplestOT_sender.s"
+	@echo "... home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.o"
+	@echo "... home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.i"
+	@echo "... home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.s"
 .PHONY : help
 
 
