@@ -1,0 +1,2 @@
+/usr/bin/ar qc libhw_grpc_proto.a CMakeFiles/hw_grpc_proto.dir/NonInteractiveOT.grpc.pb.cc.o CMakeFiles/hw_grpc_proto.dir/NonInteractiveOT.pb.cc.o CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.cc.o
+/usr/bin/ranlib libhw_grpc_proto.a

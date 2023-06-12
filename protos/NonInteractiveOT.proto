@@ -1,0 +1,25 @@
+
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.examples.NonInteractiveOT";
+option java_outer_classname = "NonInteractiveOTProto";
+option objc_class_prefix = "HLW";
+
+package NonInteractiveOT;
+
+service OT {
+  rpc SendParam (Param) returns (Reply) {}
+}
+
+
+message Param {
+  string alpha0 = 1;
+  string alpha1 = 2;
+  string r0 = 3;
+  string r1 = 4;
+}
+
+message Reply {
+  string message = 1;
+}
