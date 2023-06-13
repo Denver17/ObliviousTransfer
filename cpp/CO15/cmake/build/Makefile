@@ -251,6 +251,54 @@ SimplestOT_sender.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimplestOT_sender.dir/build.make CMakeFiles/SimplestOT_sender.dir/SimplestOT_sender.cc.s
 .PHONY : SimplestOT_sender.cc.s
 
+home/denver/ot/ObliviousTransfer/cpp/CryptoTools/RWfile.o: home/denver/ot/ObliviousTransfer/cpp/CryptoTools/RWfile.cc.o
+.PHONY : home/denver/ot/ObliviousTransfer/cpp/CryptoTools/RWfile.o
+
+# target to build an object file
+home/denver/ot/ObliviousTransfer/cpp/CryptoTools/RWfile.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw_grpc_proto.dir/build.make CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/RWfile.cc.o
+.PHONY : home/denver/ot/ObliviousTransfer/cpp/CryptoTools/RWfile.cc.o
+
+home/denver/ot/ObliviousTransfer/cpp/CryptoTools/RWfile.i: home/denver/ot/ObliviousTransfer/cpp/CryptoTools/RWfile.cc.i
+.PHONY : home/denver/ot/ObliviousTransfer/cpp/CryptoTools/RWfile.i
+
+# target to preprocess a source file
+home/denver/ot/ObliviousTransfer/cpp/CryptoTools/RWfile.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw_grpc_proto.dir/build.make CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/RWfile.cc.i
+.PHONY : home/denver/ot/ObliviousTransfer/cpp/CryptoTools/RWfile.cc.i
+
+home/denver/ot/ObliviousTransfer/cpp/CryptoTools/RWfile.s: home/denver/ot/ObliviousTransfer/cpp/CryptoTools/RWfile.cc.s
+.PHONY : home/denver/ot/ObliviousTransfer/cpp/CryptoTools/RWfile.s
+
+# target to generate assembly for a file
+home/denver/ot/ObliviousTransfer/cpp/CryptoTools/RWfile.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw_grpc_proto.dir/build.make CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/RWfile.cc.s
+.PHONY : home/denver/ot/ObliviousTransfer/cpp/CryptoTools/RWfile.cc.s
+
+home/denver/ot/ObliviousTransfer/cpp/CryptoTools/StringCharArray.o: home/denver/ot/ObliviousTransfer/cpp/CryptoTools/StringCharArray.cc.o
+.PHONY : home/denver/ot/ObliviousTransfer/cpp/CryptoTools/StringCharArray.o
+
+# target to build an object file
+home/denver/ot/ObliviousTransfer/cpp/CryptoTools/StringCharArray.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw_grpc_proto.dir/build.make CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/StringCharArray.cc.o
+.PHONY : home/denver/ot/ObliviousTransfer/cpp/CryptoTools/StringCharArray.cc.o
+
+home/denver/ot/ObliviousTransfer/cpp/CryptoTools/StringCharArray.i: home/denver/ot/ObliviousTransfer/cpp/CryptoTools/StringCharArray.cc.i
+.PHONY : home/denver/ot/ObliviousTransfer/cpp/CryptoTools/StringCharArray.i
+
+# target to preprocess a source file
+home/denver/ot/ObliviousTransfer/cpp/CryptoTools/StringCharArray.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw_grpc_proto.dir/build.make CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/StringCharArray.cc.i
+.PHONY : home/denver/ot/ObliviousTransfer/cpp/CryptoTools/StringCharArray.cc.i
+
+home/denver/ot/ObliviousTransfer/cpp/CryptoTools/StringCharArray.s: home/denver/ot/ObliviousTransfer/cpp/CryptoTools/StringCharArray.cc.s
+.PHONY : home/denver/ot/ObliviousTransfer/cpp/CryptoTools/StringCharArray.s
+
+# target to generate assembly for a file
+home/denver/ot/ObliviousTransfer/cpp/CryptoTools/StringCharArray.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw_grpc_proto.dir/build.make CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/StringCharArray.cc.s
+.PHONY : home/denver/ot/ObliviousTransfer/cpp/CryptoTools/StringCharArray.cc.s
+
 home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.o: home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.cc.o
 .PHONY : home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.o
 
@@ -275,6 +323,30 @@ home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw_grpc_proto.dir/build.make CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.cc.s
 .PHONY : home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.cc.s
 
+home/denver/ot/ObliviousTransfer/cpp/CryptoTools/sha256.o: home/denver/ot/ObliviousTransfer/cpp/CryptoTools/sha256.cc.o
+.PHONY : home/denver/ot/ObliviousTransfer/cpp/CryptoTools/sha256.o
+
+# target to build an object file
+home/denver/ot/ObliviousTransfer/cpp/CryptoTools/sha256.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw_grpc_proto.dir/build.make CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/sha256.cc.o
+.PHONY : home/denver/ot/ObliviousTransfer/cpp/CryptoTools/sha256.cc.o
+
+home/denver/ot/ObliviousTransfer/cpp/CryptoTools/sha256.i: home/denver/ot/ObliviousTransfer/cpp/CryptoTools/sha256.cc.i
+.PHONY : home/denver/ot/ObliviousTransfer/cpp/CryptoTools/sha256.i
+
+# target to preprocess a source file
+home/denver/ot/ObliviousTransfer/cpp/CryptoTools/sha256.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw_grpc_proto.dir/build.make CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/sha256.cc.i
+.PHONY : home/denver/ot/ObliviousTransfer/cpp/CryptoTools/sha256.cc.i
+
+home/denver/ot/ObliviousTransfer/cpp/CryptoTools/sha256.s: home/denver/ot/ObliviousTransfer/cpp/CryptoTools/sha256.cc.s
+.PHONY : home/denver/ot/ObliviousTransfer/cpp/CryptoTools/sha256.s
+
+# target to generate assembly for a file
+home/denver/ot/ObliviousTransfer/cpp/CryptoTools/sha256.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw_grpc_proto.dir/build.make CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/sha256.cc.s
+.PHONY : home/denver/ot/ObliviousTransfer/cpp/CryptoTools/sha256.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -298,9 +370,18 @@ help:
 	@echo "... SimplestOT_sender.o"
 	@echo "... SimplestOT_sender.i"
 	@echo "... SimplestOT_sender.s"
+	@echo "... home/denver/ot/ObliviousTransfer/cpp/CryptoTools/RWfile.o"
+	@echo "... home/denver/ot/ObliviousTransfer/cpp/CryptoTools/RWfile.i"
+	@echo "... home/denver/ot/ObliviousTransfer/cpp/CryptoTools/RWfile.s"
+	@echo "... home/denver/ot/ObliviousTransfer/cpp/CryptoTools/StringCharArray.o"
+	@echo "... home/denver/ot/ObliviousTransfer/cpp/CryptoTools/StringCharArray.i"
+	@echo "... home/denver/ot/ObliviousTransfer/cpp/CryptoTools/StringCharArray.s"
 	@echo "... home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.o"
 	@echo "... home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.i"
 	@echo "... home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.s"
+	@echo "... home/denver/ot/ObliviousTransfer/cpp/CryptoTools/sha256.o"
+	@echo "... home/denver/ot/ObliviousTransfer/cpp/CryptoTools/sha256.i"
+	@echo "... home/denver/ot/ObliviousTransfer/cpp/CryptoTools/sha256.s"
 .PHONY : help
 
 

@@ -251,29 +251,53 @@ NonInteractiveOT_sender.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/NonInteractiveOT_sender.dir/build.make CMakeFiles/NonInteractiveOT_sender.dir/NonInteractiveOT_sender.cc.s
 .PHONY : NonInteractiveOT_sender.cc.s
 
-home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.o: home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.cc.o
-.PHONY : home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.o
+home/denver/ot/ObliviousTransfer/cpp/CryptoTools/RWfile.o: home/denver/ot/ObliviousTransfer/cpp/CryptoTools/RWfile.cc.o
+.PHONY : home/denver/ot/ObliviousTransfer/cpp/CryptoTools/RWfile.o
 
 # target to build an object file
-home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw_grpc_proto.dir/build.make CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.cc.o
-.PHONY : home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.cc.o
+home/denver/ot/ObliviousTransfer/cpp/CryptoTools/RWfile.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw_grpc_proto.dir/build.make CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/RWfile.cc.o
+.PHONY : home/denver/ot/ObliviousTransfer/cpp/CryptoTools/RWfile.cc.o
 
-home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.i: home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.cc.i
-.PHONY : home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.i
+home/denver/ot/ObliviousTransfer/cpp/CryptoTools/RWfile.i: home/denver/ot/ObliviousTransfer/cpp/CryptoTools/RWfile.cc.i
+.PHONY : home/denver/ot/ObliviousTransfer/cpp/CryptoTools/RWfile.i
 
 # target to preprocess a source file
-home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw_grpc_proto.dir/build.make CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.cc.i
-.PHONY : home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.cc.i
+home/denver/ot/ObliviousTransfer/cpp/CryptoTools/RWfile.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw_grpc_proto.dir/build.make CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/RWfile.cc.i
+.PHONY : home/denver/ot/ObliviousTransfer/cpp/CryptoTools/RWfile.cc.i
 
-home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.s: home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.cc.s
-.PHONY : home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.s
+home/denver/ot/ObliviousTransfer/cpp/CryptoTools/RWfile.s: home/denver/ot/ObliviousTransfer/cpp/CryptoTools/RWfile.cc.s
+.PHONY : home/denver/ot/ObliviousTransfer/cpp/CryptoTools/RWfile.s
 
 # target to generate assembly for a file
-home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw_grpc_proto.dir/build.make CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.cc.s
-.PHONY : home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.cc.s
+home/denver/ot/ObliviousTransfer/cpp/CryptoTools/RWfile.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw_grpc_proto.dir/build.make CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/RWfile.cc.s
+.PHONY : home/denver/ot/ObliviousTransfer/cpp/CryptoTools/RWfile.cc.s
+
+home/denver/ot/ObliviousTransfer/cpp/CryptoTools/StringCharArray.o: home/denver/ot/ObliviousTransfer/cpp/CryptoTools/StringCharArray.cc.o
+.PHONY : home/denver/ot/ObliviousTransfer/cpp/CryptoTools/StringCharArray.o
+
+# target to build an object file
+home/denver/ot/ObliviousTransfer/cpp/CryptoTools/StringCharArray.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw_grpc_proto.dir/build.make CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/StringCharArray.cc.o
+.PHONY : home/denver/ot/ObliviousTransfer/cpp/CryptoTools/StringCharArray.cc.o
+
+home/denver/ot/ObliviousTransfer/cpp/CryptoTools/StringCharArray.i: home/denver/ot/ObliviousTransfer/cpp/CryptoTools/StringCharArray.cc.i
+.PHONY : home/denver/ot/ObliviousTransfer/cpp/CryptoTools/StringCharArray.i
+
+# target to preprocess a source file
+home/denver/ot/ObliviousTransfer/cpp/CryptoTools/StringCharArray.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw_grpc_proto.dir/build.make CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/StringCharArray.cc.i
+.PHONY : home/denver/ot/ObliviousTransfer/cpp/CryptoTools/StringCharArray.cc.i
+
+home/denver/ot/ObliviousTransfer/cpp/CryptoTools/StringCharArray.s: home/denver/ot/ObliviousTransfer/cpp/CryptoTools/StringCharArray.cc.s
+.PHONY : home/denver/ot/ObliviousTransfer/cpp/CryptoTools/StringCharArray.s
+
+# target to generate assembly for a file
+home/denver/ot/ObliviousTransfer/cpp/CryptoTools/StringCharArray.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw_grpc_proto.dir/build.make CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/StringCharArray.cc.s
+.PHONY : home/denver/ot/ObliviousTransfer/cpp/CryptoTools/StringCharArray.cc.s
 
 # Help Target
 help:
@@ -298,9 +322,12 @@ help:
 	@echo "... NonInteractiveOT_sender.o"
 	@echo "... NonInteractiveOT_sender.i"
 	@echo "... NonInteractiveOT_sender.s"
-	@echo "... home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.o"
-	@echo "... home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.i"
-	@echo "... home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.s"
+	@echo "... home/denver/ot/ObliviousTransfer/cpp/CryptoTools/RWfile.o"
+	@echo "... home/denver/ot/ObliviousTransfer/cpp/CryptoTools/RWfile.i"
+	@echo "... home/denver/ot/ObliviousTransfer/cpp/CryptoTools/RWfile.s"
+	@echo "... home/denver/ot/ObliviousTransfer/cpp/CryptoTools/StringCharArray.o"
+	@echo "... home/denver/ot/ObliviousTransfer/cpp/CryptoTools/StringCharArray.i"
+	@echo "... home/denver/ot/ObliviousTransfer/cpp/CryptoTools/StringCharArray.s"
 .PHONY : help
 
 

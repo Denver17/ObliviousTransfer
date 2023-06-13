@@ -70,7 +70,7 @@ include CMakeFiles/hw_grpc_proto.dir/progress.make
 include CMakeFiles/hw_grpc_proto.dir/flags.make
 
 NonInteractiveOT.pb.cc: /home/denver/ot/ObliviousTransfer/protos/NonInteractiveOT.proto
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/denver/ot/ObliviousTransfer/cpp/BM89/cmake/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating NonInteractiveOT.pb.cc, NonInteractiveOT.pb.h, NonInteractiveOT.grpc.pb.cc, NonInteractiveOT.grpc.pb.h, /home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.cc, /home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.h"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/denver/ot/ObliviousTransfer/cpp/BM89/cmake/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating NonInteractiveOT.pb.cc, NonInteractiveOT.pb.h, NonInteractiveOT.grpc.pb.cc, NonInteractiveOT.grpc.pb.h, {hw_StringCharArray_srcs}, {hw_StringCharArray_hdrs}, {hw_RWfile_srcs}, {hw_RWfile_hdrs}"
 	/usr/local/bin/protoc-23.1.0 --grpc_out /home/denver/ot/ObliviousTransfer/cpp/BM89/cmake/build --cpp_out /home/denver/ot/ObliviousTransfer/cpp/BM89/cmake/build -I /home/denver/ot/ObliviousTransfer/protos --plugin=protoc-gen-grpc="/usr/local/bin/grpc_cpp_plugin" /home/denver/ot/ObliviousTransfer/protos/NonInteractiveOT.proto
 
 NonInteractiveOT.pb.h: NonInteractiveOT.pb.cc
@@ -82,11 +82,17 @@ NonInteractiveOT.grpc.pb.cc: NonInteractiveOT.pb.cc
 NonInteractiveOT.grpc.pb.h: NonInteractiveOT.pb.cc
 	@$(CMAKE_COMMAND) -E touch_nocreate NonInteractiveOT.grpc.pb.h
 
-/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.cc: NonInteractiveOT.pb.cc
-	@$(CMAKE_COMMAND) -E touch_nocreate /home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.cc
+{hw_StringCharArray_srcs}: NonInteractiveOT.pb.cc
+	@$(CMAKE_COMMAND) -E touch_nocreate {hw_StringCharArray_srcs}
 
-/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.h: NonInteractiveOT.pb.cc
-	@$(CMAKE_COMMAND) -E touch_nocreate /home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.h
+{hw_StringCharArray_hdrs}: NonInteractiveOT.pb.cc
+	@$(CMAKE_COMMAND) -E touch_nocreate {hw_StringCharArray_hdrs}
+
+{hw_RWfile_srcs}: NonInteractiveOT.pb.cc
+	@$(CMAKE_COMMAND) -E touch_nocreate {hw_RWfile_srcs}
+
+{hw_RWfile_hdrs}: NonInteractiveOT.pb.cc
+	@$(CMAKE_COMMAND) -E touch_nocreate {hw_RWfile_hdrs}
 
 CMakeFiles/hw_grpc_proto.dir/NonInteractiveOT.grpc.pb.cc.o: CMakeFiles/hw_grpc_proto.dir/flags.make
 CMakeFiles/hw_grpc_proto.dir/NonInteractiveOT.grpc.pb.cc.o: NonInteractiveOT.grpc.pb.cc
@@ -116,35 +122,51 @@ CMakeFiles/hw_grpc_proto.dir/NonInteractiveOT.pb.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hw_grpc_proto.dir/NonInteractiveOT.pb.cc.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/denver/ot/ObliviousTransfer/cpp/BM89/cmake/build/NonInteractiveOT.pb.cc -o CMakeFiles/hw_grpc_proto.dir/NonInteractiveOT.pb.cc.s
 
-CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.cc.o: CMakeFiles/hw_grpc_proto.dir/flags.make
-CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.cc.o: /home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.cc
-CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.cc.o: CMakeFiles/hw_grpc_proto.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/denver/ot/ObliviousTransfer/cpp/BM89/cmake/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.cc.o -MF CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.cc.o.d -o CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.cc.o -c /home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.cc
+CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/StringCharArray.cc.o: CMakeFiles/hw_grpc_proto.dir/flags.make
+CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/StringCharArray.cc.o: /home/denver/ot/ObliviousTransfer/cpp/CryptoTools/StringCharArray.cc
+CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/StringCharArray.cc.o: CMakeFiles/hw_grpc_proto.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/denver/ot/ObliviousTransfer/cpp/BM89/cmake/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/StringCharArray.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/StringCharArray.cc.o -MF CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/StringCharArray.cc.o.d -o CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/StringCharArray.cc.o -c /home/denver/ot/ObliviousTransfer/cpp/CryptoTools/StringCharArray.cc
 
-CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.cc > CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.cc.i
+CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/StringCharArray.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/StringCharArray.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/denver/ot/ObliviousTransfer/cpp/CryptoTools/StringCharArray.cc > CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/StringCharArray.cc.i
 
-CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.cc -o CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.cc.s
+CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/StringCharArray.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/StringCharArray.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/denver/ot/ObliviousTransfer/cpp/CryptoTools/StringCharArray.cc -o CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/StringCharArray.cc.s
+
+CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/RWfile.cc.o: CMakeFiles/hw_grpc_proto.dir/flags.make
+CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/RWfile.cc.o: /home/denver/ot/ObliviousTransfer/cpp/CryptoTools/RWfile.cc
+CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/RWfile.cc.o: CMakeFiles/hw_grpc_proto.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/denver/ot/ObliviousTransfer/cpp/BM89/cmake/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/RWfile.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/RWfile.cc.o -MF CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/RWfile.cc.o.d -o CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/RWfile.cc.o -c /home/denver/ot/ObliviousTransfer/cpp/CryptoTools/RWfile.cc
+
+CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/RWfile.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/RWfile.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/denver/ot/ObliviousTransfer/cpp/CryptoTools/RWfile.cc > CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/RWfile.cc.i
+
+CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/RWfile.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/RWfile.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/denver/ot/ObliviousTransfer/cpp/CryptoTools/RWfile.cc -o CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/RWfile.cc.s
 
 # Object files for target hw_grpc_proto
 hw_grpc_proto_OBJECTS = \
 "CMakeFiles/hw_grpc_proto.dir/NonInteractiveOT.grpc.pb.cc.o" \
 "CMakeFiles/hw_grpc_proto.dir/NonInteractiveOT.pb.cc.o" \
-"CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.cc.o"
+"CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/StringCharArray.cc.o" \
+"CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/RWfile.cc.o"
 
 # External object files for target hw_grpc_proto
 hw_grpc_proto_EXTERNAL_OBJECTS =
 
 libhw_grpc_proto.a: CMakeFiles/hw_grpc_proto.dir/NonInteractiveOT.grpc.pb.cc.o
 libhw_grpc_proto.a: CMakeFiles/hw_grpc_proto.dir/NonInteractiveOT.pb.cc.o
-libhw_grpc_proto.a: CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.cc.o
+libhw_grpc_proto.a: CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/StringCharArray.cc.o
+libhw_grpc_proto.a: CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/RWfile.cc.o
 libhw_grpc_proto.a: CMakeFiles/hw_grpc_proto.dir/build.make
 libhw_grpc_proto.a: CMakeFiles/hw_grpc_proto.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/denver/ot/ObliviousTransfer/cpp/BM89/cmake/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX static library libhw_grpc_proto.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/denver/ot/ObliviousTransfer/cpp/BM89/cmake/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX static library libhw_grpc_proto.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/hw_grpc_proto.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/hw_grpc_proto.dir/link.txt --verbose=$(VERBOSE)
 
@@ -160,8 +182,10 @@ CMakeFiles/hw_grpc_proto.dir/depend: NonInteractiveOT.grpc.pb.cc
 CMakeFiles/hw_grpc_proto.dir/depend: NonInteractiveOT.grpc.pb.h
 CMakeFiles/hw_grpc_proto.dir/depend: NonInteractiveOT.pb.cc
 CMakeFiles/hw_grpc_proto.dir/depend: NonInteractiveOT.pb.h
-CMakeFiles/hw_grpc_proto.dir/depend: /home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.cc
-CMakeFiles/hw_grpc_proto.dir/depend: /home/denver/ot/ObliviousTransfer/cpp/CryptoTools/aes.h
+CMakeFiles/hw_grpc_proto.dir/depend: {hw_RWfile_hdrs}
+CMakeFiles/hw_grpc_proto.dir/depend: {hw_RWfile_srcs}
+CMakeFiles/hw_grpc_proto.dir/depend: {hw_StringCharArray_hdrs}
+CMakeFiles/hw_grpc_proto.dir/depend: {hw_StringCharArray_srcs}
 	cd /home/denver/ot/ObliviousTransfer/cpp/BM89/cmake/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/denver/ot/ObliviousTransfer/cpp/BM89 /home/denver/ot/ObliviousTransfer/cpp/BM89 /home/denver/ot/ObliviousTransfer/cpp/BM89/cmake/build /home/denver/ot/ObliviousTransfer/cpp/BM89/cmake/build /home/denver/ot/ObliviousTransfer/cpp/BM89/cmake/build/CMakeFiles/hw_grpc_proto.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/hw_grpc_proto.dir/depend
 

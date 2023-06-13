@@ -2,11 +2,9 @@
 #include <NTL/ZZ.h>
 #include <sstream>
 #include <fstream>
-#include <string>
 #include <openssl/sha.h>
-// #include <openssl/aes.h>
-// #include <openssl/rand.h>
-#include "../CryptoTools/aes.h"
+#include "../CryptoTools/StringCharArray.h"
+#include "../CryptoTools/RWfile.h"
 
 #include <iostream>
 #include <memory>
@@ -39,69 +37,6 @@ ABSL_FLAG(uint16_t, port, 50051, "Server port for the service");
 int i;
 NTL::ZZ p, g, C, x, beta0, beta1;
 std::string kR;
-
-void stringToUnsignedCharArray(const std::string& str, unsigned char* array) {
-    std::memcpy(array, str.data(), str.size());
-}
-
-std::string unsignedCharArrayToString(const unsigned char* array, size_t length) {
-    return std::string(reinterpret_cast<const char*>(array), length);
-}
-
-std::string zToString(const NTL::ZZ &z) {
-    std::stringstream buffer;
-    buffer << z;
-    return buffer.str();
-}
-
-int readFile(NTL::ZZ &value, std::string path) {
-    // 从文本文件中读取 ZZ 变量
-    std::ifstream inputFile(path);
-    if (inputFile.is_open())
-    {
-        std::string line, res;
-        while (std::getline(inputFile, line))
-        {
-            res += line;
-        }
-        // 将读取的字符串转换为 ZZ 类型
-        value = NTL::conv<NTL::ZZ>(res.c_str());
-        inputFile.close();
-        return 1;
-    }
-    else
-    {
-        return -1;
-    }
-}
-
-int writeFile(const NTL::ZZ &value, std::string path) {
-    // 将 ZZ 变量写入到文本文件中
-    std::ofstream file(path);
-    if (file.is_open())
-    {
-        // 将 ZZ 变量转换为字符串并写入文件
-        file << zToString(value) << std::endl;
-        file.close();
-        std::cout << "Variable written to file." << std::endl;
-        return 1;
-    }
-    else
-    {
-        return -1;
-    }
-}
-
-std::string sha256(const std::string& input) {
-    unsigned char hash[SHA256_DIGEST_LENGTH];
-    SHA256_CTX sha256;
-    SHA256_Init(&sha256);
-    SHA256_Update(&sha256, input.c_str(), input.length());
-    SHA256_Final(hash, &sha256);
-
-    std::string ss = unsignedCharArrayToString(hash, SHA256_DIGEST_LENGTH);
-    return ss;
-}
 
 // 计算两数的内积
 NTL::ZZ InnerProduct(NTL::ZZ v1, NTL::ZZ v2) {
@@ -136,6 +71,9 @@ class OTServiceImpl final : public OT::Service {
         gamma1 = NTL::PowerMod(alpha1, x, p);
         b0 = InnerProduct(gamma0, r0);
         b1 = InnerProduct(gamma1, r1);
+
+        std::cout << "b0 = " << b0 << std::endl;
+        std::cout << "b1 = " << b1 << std::endl;
 
         std::string res = "i have received params";
         reply->set_message(res);

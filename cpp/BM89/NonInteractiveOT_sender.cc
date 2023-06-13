@@ -4,7 +4,8 @@
 #include <sstream>
 #include <openssl/sha.h>
 #include <iomanip>
-#include "../CryptoTools/aes.h"
+#include "../CryptoTools/StringCharArray.h"
+#include "../CryptoTools/RWfile.h"
 
 #include <iostream>
 #include <memory>
@@ -33,51 +34,6 @@ using NonInteractiveOT::Param;
 const long length = 2048;
 NTL::ZZ p, g, C, beta0, beta1;
 
-void stringToUnsignedCharArray(const std::string& str, unsigned char* array) {
-    std::memcpy(array, str.data(), str.size());
-}
-
-std::string unsignedCharArrayToString(const unsigned char* array, size_t length) {
-    return std::string(reinterpret_cast<const char*>(array), length);
-}
-
-std::string zToString(const NTL::ZZ &z) {
-    std::stringstream buffer;
-    buffer << z;
-    return buffer.str();
-}
-
-std::string sha256(const std::string& input) {
-    unsigned char hash[SHA256_DIGEST_LENGTH];
-    SHA256_CTX sha256;
-    SHA256_Init(&sha256);
-    SHA256_Update(&sha256, input.c_str(), input.length());
-    SHA256_Final(hash, &sha256);
-
-    std::string ss = unsignedCharArrayToString(hash, SHA256_DIGEST_LENGTH);
-    return ss;
-}
-
-int readFile(NTL::ZZ &value, std::string path) {
-    // 从文本文件中读取 ZZ 变量
-    std::ifstream inputFile(path);
-    if (inputFile.is_open())
-    {
-        std::string line, res;
-        while (std::getline(inputFile, line))
-        {
-            res += line;
-        }
-        // 将读取的字符串转换为 ZZ 类型
-        value = NTL::conv<NTL::ZZ>(res.c_str());
-        inputFile.close();
-        return 1;
-    }
-    else
-    {
-        return -1;
-    }
-}
 
 // 计算两数的内积
 NTL::ZZ InnerProduct(NTL::ZZ v1, NTL::ZZ v2) {

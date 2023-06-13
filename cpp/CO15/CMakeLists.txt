@@ -9,6 +9,12 @@ get_filename_component(hw_proto "../../protos/SimplestOT.proto" ABSOLUTE)
 get_filename_component(hw_proto_path "${hw_proto}" PATH)
 
 # Generated sources
+set(hw_RWfile_srcs "../../../CryptoTools/RWfile.cc")
+set(hw_RWfile_hdrs "../../../CryptoTools/RWfile.h")
+set(hw_StringCharArray_srcs "../../../CryptoTools/StringCharArray.cc")
+set(hw_StringCharArray_hdrs "../../../CryptoTools/StringCharArray.h")
+set(hw_sha256_srcs "../../../CryptoTools/sha256.cc")
+set(hw_sha256_hdrs "../../../CryptoTools/sha256.h")
 set(hw_aes_srcs "../../../CryptoTools/aes.cc")
 set(hw_aes_hdrs "../../../CryptoTools/aes.h")
 set(hw_proto_srcs "${CMAKE_CURRENT_BINARY_DIR}/SimplestOT.pb.cc")
@@ -16,7 +22,7 @@ set(hw_proto_hdrs "${CMAKE_CURRENT_BINARY_DIR}/SimplestOT.pb.h")
 set(hw_grpc_srcs "${CMAKE_CURRENT_BINARY_DIR}/SimplestOT.grpc.pb.cc")
 set(hw_grpc_hdrs "${CMAKE_CURRENT_BINARY_DIR}/SimplestOT.grpc.pb.h")
 add_custom_command(
-      OUTPUT "${hw_proto_srcs}" "${hw_proto_hdrs}" "${hw_grpc_srcs}" "${hw_grpc_hdrs}" "${hw_aes_srcs}" "${hw_aes_hdrs}"
+      OUTPUT "${hw_proto_srcs}" "${hw_proto_hdrs}" "${hw_grpc_srcs}" "${hw_grpc_hdrs}" "${hw_aes_srcs}" "${hw_aes_hdrs}" "{hw_sha256_srcs}" "{hw_sha256_hdrs}" "{hw_StringCharArray_srcs}" "{hw_StringCharArray_hdrs}" "{hw_RWfile_srcs}" "{hw_RWfile_hdrs}"
       COMMAND ${_PROTOBUF_PROTOC}
       ARGS --grpc_out "${CMAKE_CURRENT_BINARY_DIR}"
         --cpp_out "${CMAKE_CURRENT_BINARY_DIR}"
@@ -35,16 +41,18 @@ add_library(hw_grpc_proto
   ${hw_proto_srcs}
   ${hw_proto_hdrs}
   ${hw_aes_srcs}
-  ${hw_aes_hdrs})
+  ${hw_aes_hdrs}
+  ${hw_sha256_srcs}
+  ${hw_sha256_hdrs}
+  ${hw_StringCharArray_srcs}
+  ${hw_StringCharArray_hdrs}
+  ${hw_RWfile_srcs}
+  ${hw_RWfile_hdrs})
 target_link_libraries(hw_grpc_proto
   ${_REFLECTION}
   ${_GRPC_GRPCPP}
   ${_PROTOBUF_LIBPROTOBUF})
 
-# # AES library
-# add_library(aes_lib
-#   ../CryptoTools/aes.cc)  # 添加 aes.cc 文件到 aes_lib 库
-# target_include_directories(aes_lib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/CryptoTools)  # 设置 aes_lib 的头文件路径
 
 # Targets SimplestOT_[async_](sender|chooser)
 foreach(_target
