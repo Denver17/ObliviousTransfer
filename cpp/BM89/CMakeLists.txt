@@ -9,6 +9,8 @@ get_filename_component(hw_proto "../../protos/NonInteractiveOT.proto" ABSOLUTE)
 get_filename_component(hw_proto_path "${hw_proto}" PATH)
 
 # Generated sources
+set(hw_ZZCal_srcs "../../../CryptoTools/ZZCal.cc")
+set(hw_ZZCal_hdrs "../../../CryptoTools/ZZCal.h")
 set(hw_RWfile_srcs "../../../CryptoTools/RWfile.cc")
 set(hw_RWfile_hdrs "../../../CryptoTools/RWfile.h")
 set(hw_StringCharArray_srcs "../../../CryptoTools/StringCharArray.cc")
@@ -18,7 +20,7 @@ set(hw_proto_hdrs "${CMAKE_CURRENT_BINARY_DIR}/NonInteractiveOT.pb.h")
 set(hw_grpc_srcs "${CMAKE_CURRENT_BINARY_DIR}/NonInteractiveOT.grpc.pb.cc")
 set(hw_grpc_hdrs "${CMAKE_CURRENT_BINARY_DIR}/NonInteractiveOT.grpc.pb.h")
 add_custom_command(
-      OUTPUT "${hw_proto_srcs}" "${hw_proto_hdrs}" "${hw_grpc_srcs}" "${hw_grpc_hdrs}" "{hw_StringCharArray_srcs}" "{hw_StringCharArray_hdrs}" "{hw_RWfile_srcs}" "{hw_RWfile_hdrs}"
+      OUTPUT "${hw_proto_srcs}" "${hw_proto_hdrs}" "${hw_grpc_srcs}" "${hw_grpc_hdrs}" "{hw_StringCharArray_srcs}" "{hw_StringCharArray_hdrs}" "{hw_RWfile_srcs}" "{hw_RWfile_hdrs}" "{hw_ZZCal_srcs}" "{hw_ZZCal_hdrs}"
       COMMAND ${_PROTOBUF_PROTOC}
       ARGS --grpc_out "${CMAKE_CURRENT_BINARY_DIR}"
         --cpp_out "${CMAKE_CURRENT_BINARY_DIR}"
@@ -39,7 +41,9 @@ add_library(hw_grpc_proto
   ${hw_StringCharArray_srcs}
   ${hw_StringCharArray_hdrs}
   ${hw_RWfile_srcs}
-  ${hw_RWfile_hdrs})
+  ${hw_RWfile_hdrs}
+  ${hw_ZZCal_srcs}
+  ${hw_ZZCal_hdrs})
 target_link_libraries(hw_grpc_proto
   ${_REFLECTION}
   ${_GRPC_GRPCPP}
@@ -47,7 +51,8 @@ target_link_libraries(hw_grpc_proto
 
 # Targets NonInteractiveOT_[async_](sender|chooser)
 foreach(_target
-  NonInteractiveOT_sender NonInteractiveOT_chooser)
+  NonInteractiveOT_sender NonInteractiveOT_chooser
+  OTChannels_sender OTChannels_chooser)
   add_executable(${_target} "${_target}.cc")
   target_link_libraries(${_target}
     hw_grpc_proto

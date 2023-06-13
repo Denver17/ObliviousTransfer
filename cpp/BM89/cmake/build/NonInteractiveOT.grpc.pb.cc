@@ -23,6 +23,8 @@ namespace NonInteractiveOT {
 
 static const char* OT_method_names[] = {
   "/NonInteractiveOT.OT/SendParam",
+  "/NonInteractiveOT.OT/SendParams",
+  "/NonInteractiveOT.OT/SendCipherText",
 };
 
 std::unique_ptr< OT::Stub> OT::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -33,6 +35,8 @@ std::unique_ptr< OT::Stub> OT::NewStub(const std::shared_ptr< ::grpc::ChannelInt
 
 OT::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
   : channel_(channel), rpcmethod_SendParam_(OT_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_SendParams_(OT_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::CLIENT_STREAMING, channel)
+  , rpcmethod_SendCipherText_(OT_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::CLIENT_STREAMING, channel)
   {}
 
 ::grpc::Status OT::Stub::SendParam(::grpc::ClientContext* context, const ::NonInteractiveOT::Param& request, ::NonInteractiveOT::Reply* response) {
@@ -58,6 +62,38 @@ void OT::Stub::async::SendParam(::grpc::ClientContext* context, const ::NonInter
   return result;
 }
 
+::grpc::ClientWriter< ::NonInteractiveOT::Param>* OT::Stub::SendParamsRaw(::grpc::ClientContext* context, ::NonInteractiveOT::Reply* response) {
+  return ::grpc::internal::ClientWriterFactory< ::NonInteractiveOT::Param>::Create(channel_.get(), rpcmethod_SendParams_, context, response);
+}
+
+void OT::Stub::async::SendParams(::grpc::ClientContext* context, ::NonInteractiveOT::Reply* response, ::grpc::ClientWriteReactor< ::NonInteractiveOT::Param>* reactor) {
+  ::grpc::internal::ClientCallbackWriterFactory< ::NonInteractiveOT::Param>::Create(stub_->channel_.get(), stub_->rpcmethod_SendParams_, context, response, reactor);
+}
+
+::grpc::ClientAsyncWriter< ::NonInteractiveOT::Param>* OT::Stub::AsyncSendParamsRaw(::grpc::ClientContext* context, ::NonInteractiveOT::Reply* response, ::grpc::CompletionQueue* cq, void* tag) {
+  return ::grpc::internal::ClientAsyncWriterFactory< ::NonInteractiveOT::Param>::Create(channel_.get(), cq, rpcmethod_SendParams_, context, response, true, tag);
+}
+
+::grpc::ClientAsyncWriter< ::NonInteractiveOT::Param>* OT::Stub::PrepareAsyncSendParamsRaw(::grpc::ClientContext* context, ::NonInteractiveOT::Reply* response, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncWriterFactory< ::NonInteractiveOT::Param>::Create(channel_.get(), cq, rpcmethod_SendParams_, context, response, false, nullptr);
+}
+
+::grpc::ClientWriter< ::NonInteractiveOT::CipherText>* OT::Stub::SendCipherTextRaw(::grpc::ClientContext* context, ::NonInteractiveOT::Reply* response) {
+  return ::grpc::internal::ClientWriterFactory< ::NonInteractiveOT::CipherText>::Create(channel_.get(), rpcmethod_SendCipherText_, context, response);
+}
+
+void OT::Stub::async::SendCipherText(::grpc::ClientContext* context, ::NonInteractiveOT::Reply* response, ::grpc::ClientWriteReactor< ::NonInteractiveOT::CipherText>* reactor) {
+  ::grpc::internal::ClientCallbackWriterFactory< ::NonInteractiveOT::CipherText>::Create(stub_->channel_.get(), stub_->rpcmethod_SendCipherText_, context, response, reactor);
+}
+
+::grpc::ClientAsyncWriter< ::NonInteractiveOT::CipherText>* OT::Stub::AsyncSendCipherTextRaw(::grpc::ClientContext* context, ::NonInteractiveOT::Reply* response, ::grpc::CompletionQueue* cq, void* tag) {
+  return ::grpc::internal::ClientAsyncWriterFactory< ::NonInteractiveOT::CipherText>::Create(channel_.get(), cq, rpcmethod_SendCipherText_, context, response, true, tag);
+}
+
+::grpc::ClientAsyncWriter< ::NonInteractiveOT::CipherText>* OT::Stub::PrepareAsyncSendCipherTextRaw(::grpc::ClientContext* context, ::NonInteractiveOT::Reply* response, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncWriterFactory< ::NonInteractiveOT::CipherText>::Create(channel_.get(), cq, rpcmethod_SendCipherText_, context, response, false, nullptr);
+}
+
 OT::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       OT_method_names[0],
@@ -69,6 +105,26 @@ OT::Service::Service() {
              ::NonInteractiveOT::Reply* resp) {
                return service->SendParam(ctx, req, resp);
              }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      OT_method_names[1],
+      ::grpc::internal::RpcMethod::CLIENT_STREAMING,
+      new ::grpc::internal::ClientStreamingHandler< OT::Service, ::NonInteractiveOT::Param, ::NonInteractiveOT::Reply>(
+          [](OT::Service* service,
+             ::grpc::ServerContext* ctx,
+             ::grpc::ServerReader<::NonInteractiveOT::Param>* reader,
+             ::NonInteractiveOT::Reply* resp) {
+               return service->SendParams(ctx, reader, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      OT_method_names[2],
+      ::grpc::internal::RpcMethod::CLIENT_STREAMING,
+      new ::grpc::internal::ClientStreamingHandler< OT::Service, ::NonInteractiveOT::CipherText, ::NonInteractiveOT::Reply>(
+          [](OT::Service* service,
+             ::grpc::ServerContext* ctx,
+             ::grpc::ServerReader<::NonInteractiveOT::CipherText>* reader,
+             ::NonInteractiveOT::Reply* resp) {
+               return service->SendCipherText(ctx, reader, resp);
+             }, this)));
 }
 
 OT::Service::~Service() {
@@ -77,6 +133,20 @@ OT::Service::~Service() {
 ::grpc::Status OT::Service::SendParam(::grpc::ServerContext* context, const ::NonInteractiveOT::Param* request, ::NonInteractiveOT::Reply* response) {
   (void) context;
   (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status OT::Service::SendParams(::grpc::ServerContext* context, ::grpc::ServerReader< ::NonInteractiveOT::Param>* reader, ::NonInteractiveOT::Reply* response) {
+  (void) context;
+  (void) reader;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status OT::Service::SendCipherText(::grpc::ServerContext* context, ::grpc::ServerReader< ::NonInteractiveOT::CipherText>* reader, ::NonInteractiveOT::Reply* response) {
+  (void) context;
+  (void) reader;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }

@@ -74,4 +74,6 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/hw_grpc_proto.dir/DependInfo.cmake"
   "CMakeFiles/NonInteractiveOT_sender.dir/DependInfo.cmake"
   "CMakeFiles/NonInteractiveOT_chooser.dir/DependInfo.cmake"
+  "CMakeFiles/OTChannels_sender.dir/DependInfo.cmake"
+  "CMakeFiles/OTChannels_chooser.dir/DependInfo.cmake"
   )

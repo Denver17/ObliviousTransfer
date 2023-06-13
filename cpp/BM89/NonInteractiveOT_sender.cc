@@ -6,6 +6,7 @@
 #include <iomanip>
 #include "../CryptoTools/StringCharArray.h"
 #include "../CryptoTools/RWfile.h"
+#include "../CryptoTools/ZZCal.h"
 
 #include <iostream>
 #include <memory>
@@ -33,19 +34,6 @@ using NonInteractiveOT::Param;
 
 const long length = 2048;
 NTL::ZZ p, g, C, beta0, beta1;
-
-
-// 计算两数的内积
-NTL::ZZ InnerProduct(NTL::ZZ v1, NTL::ZZ v2) {
-    NTL::ZZ result;
-    result = 0;
-    while(v1 != 0 && v2 != 0) {
-        result = (result ^ ((v1 & 1)  & (v2 & 1)));
-        v1 >>= 1;
-        v2 >>= 1;
-    }
-    return result;
-}
 
 
 class OTSender {

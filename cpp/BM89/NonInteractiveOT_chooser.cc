@@ -5,6 +5,7 @@
 #include <openssl/sha.h>
 #include "../CryptoTools/StringCharArray.h"
 #include "../CryptoTools/RWfile.h"
+#include "../CryptoTools/ZZCal.h"
 
 #include <iostream>
 #include <memory>
@@ -38,17 +39,6 @@ int i;
 NTL::ZZ p, g, C, x, beta0, beta1;
 std::string kR;
 
-// 计算两数的内积
-NTL::ZZ InnerProduct(NTL::ZZ v1, NTL::ZZ v2) {
-    NTL::ZZ result;
-    result = 0;
-    while(v1 != 0 && v2 != 0) {
-        result = (result ^ ((v1 & 1)  & (v2 & 1)));
-        v1 >>= 1;
-        v2 >>= 1;
-    }
-    return result;
-}
 
 class OTServiceImpl final : public OT::Service {
     Status SendParam(ServerContext* context, const Param* param,

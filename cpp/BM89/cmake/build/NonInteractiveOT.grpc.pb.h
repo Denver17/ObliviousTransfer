@@ -42,11 +42,31 @@ class OT final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::NonInteractiveOT::Reply>> PrepareAsyncSendParam(::grpc::ClientContext* context, const ::NonInteractiveOT::Param& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::NonInteractiveOT::Reply>>(PrepareAsyncSendParamRaw(context, request, cq));
     }
+    std::unique_ptr< ::grpc::ClientWriterInterface< ::NonInteractiveOT::Param>> SendParams(::grpc::ClientContext* context, ::NonInteractiveOT::Reply* response) {
+      return std::unique_ptr< ::grpc::ClientWriterInterface< ::NonInteractiveOT::Param>>(SendParamsRaw(context, response));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncWriterInterface< ::NonInteractiveOT::Param>> AsyncSendParams(::grpc::ClientContext* context, ::NonInteractiveOT::Reply* response, ::grpc::CompletionQueue* cq, void* tag) {
+      return std::unique_ptr< ::grpc::ClientAsyncWriterInterface< ::NonInteractiveOT::Param>>(AsyncSendParamsRaw(context, response, cq, tag));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncWriterInterface< ::NonInteractiveOT::Param>> PrepareAsyncSendParams(::grpc::ClientContext* context, ::NonInteractiveOT::Reply* response, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncWriterInterface< ::NonInteractiveOT::Param>>(PrepareAsyncSendParamsRaw(context, response, cq));
+    }
+    std::unique_ptr< ::grpc::ClientWriterInterface< ::NonInteractiveOT::CipherText>> SendCipherText(::grpc::ClientContext* context, ::NonInteractiveOT::Reply* response) {
+      return std::unique_ptr< ::grpc::ClientWriterInterface< ::NonInteractiveOT::CipherText>>(SendCipherTextRaw(context, response));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncWriterInterface< ::NonInteractiveOT::CipherText>> AsyncSendCipherText(::grpc::ClientContext* context, ::NonInteractiveOT::Reply* response, ::grpc::CompletionQueue* cq, void* tag) {
+      return std::unique_ptr< ::grpc::ClientAsyncWriterInterface< ::NonInteractiveOT::CipherText>>(AsyncSendCipherTextRaw(context, response, cq, tag));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncWriterInterface< ::NonInteractiveOT::CipherText>> PrepareAsyncSendCipherText(::grpc::ClientContext* context, ::NonInteractiveOT::Reply* response, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncWriterInterface< ::NonInteractiveOT::CipherText>>(PrepareAsyncSendCipherTextRaw(context, response, cq));
+    }
     class async_interface {
      public:
       virtual ~async_interface() {}
       virtual void SendParam(::grpc::ClientContext* context, const ::NonInteractiveOT::Param* request, ::NonInteractiveOT::Reply* response, std::function<void(::grpc::Status)>) = 0;
       virtual void SendParam(::grpc::ClientContext* context, const ::NonInteractiveOT::Param* request, ::NonInteractiveOT::Reply* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void SendParams(::grpc::ClientContext* context, ::NonInteractiveOT::Reply* response, ::grpc::ClientWriteReactor< ::NonInteractiveOT::Param>* reactor) = 0;
+      virtual void SendCipherText(::grpc::ClientContext* context, ::NonInteractiveOT::Reply* response, ::grpc::ClientWriteReactor< ::NonInteractiveOT::CipherText>* reactor) = 0;
     };
     typedef class async_interface experimental_async_interface;
     virtual class async_interface* async() { return nullptr; }
@@ -54,6 +74,12 @@ class OT final {
    private:
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::NonInteractiveOT::Reply>* AsyncSendParamRaw(::grpc::ClientContext* context, const ::NonInteractiveOT::Param& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::NonInteractiveOT::Reply>* PrepareAsyncSendParamRaw(::grpc::ClientContext* context, const ::NonInteractiveOT::Param& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientWriterInterface< ::NonInteractiveOT::Param>* SendParamsRaw(::grpc::ClientContext* context, ::NonInteractiveOT::Reply* response) = 0;
+    virtual ::grpc::ClientAsyncWriterInterface< ::NonInteractiveOT::Param>* AsyncSendParamsRaw(::grpc::ClientContext* context, ::NonInteractiveOT::Reply* response, ::grpc::CompletionQueue* cq, void* tag) = 0;
+    virtual ::grpc::ClientAsyncWriterInterface< ::NonInteractiveOT::Param>* PrepareAsyncSendParamsRaw(::grpc::ClientContext* context, ::NonInteractiveOT::Reply* response, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientWriterInterface< ::NonInteractiveOT::CipherText>* SendCipherTextRaw(::grpc::ClientContext* context, ::NonInteractiveOT::Reply* response) = 0;
+    virtual ::grpc::ClientAsyncWriterInterface< ::NonInteractiveOT::CipherText>* AsyncSendCipherTextRaw(::grpc::ClientContext* context, ::NonInteractiveOT::Reply* response, ::grpc::CompletionQueue* cq, void* tag) = 0;
+    virtual ::grpc::ClientAsyncWriterInterface< ::NonInteractiveOT::CipherText>* PrepareAsyncSendCipherTextRaw(::grpc::ClientContext* context, ::NonInteractiveOT::Reply* response, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -65,11 +91,31 @@ class OT final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::NonInteractiveOT::Reply>> PrepareAsyncSendParam(::grpc::ClientContext* context, const ::NonInteractiveOT::Param& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::NonInteractiveOT::Reply>>(PrepareAsyncSendParamRaw(context, request, cq));
     }
+    std::unique_ptr< ::grpc::ClientWriter< ::NonInteractiveOT::Param>> SendParams(::grpc::ClientContext* context, ::NonInteractiveOT::Reply* response) {
+      return std::unique_ptr< ::grpc::ClientWriter< ::NonInteractiveOT::Param>>(SendParamsRaw(context, response));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncWriter< ::NonInteractiveOT::Param>> AsyncSendParams(::grpc::ClientContext* context, ::NonInteractiveOT::Reply* response, ::grpc::CompletionQueue* cq, void* tag) {
+      return std::unique_ptr< ::grpc::ClientAsyncWriter< ::NonInteractiveOT::Param>>(AsyncSendParamsRaw(context, response, cq, tag));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncWriter< ::NonInteractiveOT::Param>> PrepareAsyncSendParams(::grpc::ClientContext* context, ::NonInteractiveOT::Reply* response, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncWriter< ::NonInteractiveOT::Param>>(PrepareAsyncSendParamsRaw(context, response, cq));
+    }
+    std::unique_ptr< ::grpc::ClientWriter< ::NonInteractiveOT::CipherText>> SendCipherText(::grpc::ClientContext* context, ::NonInteractiveOT::Reply* response) {
+      return std::unique_ptr< ::grpc::ClientWriter< ::NonInteractiveOT::CipherText>>(SendCipherTextRaw(context, response));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncWriter< ::NonInteractiveOT::CipherText>> AsyncSendCipherText(::grpc::ClientContext* context, ::NonInteractiveOT::Reply* response, ::grpc::CompletionQueue* cq, void* tag) {
+      return std::unique_ptr< ::grpc::ClientAsyncWriter< ::NonInteractiveOT::CipherText>>(AsyncSendCipherTextRaw(context, response, cq, tag));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncWriter< ::NonInteractiveOT::CipherText>> PrepareAsyncSendCipherText(::grpc::ClientContext* context, ::NonInteractiveOT::Reply* response, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncWriter< ::NonInteractiveOT::CipherText>>(PrepareAsyncSendCipherTextRaw(context, response, cq));
+    }
     class async final :
       public StubInterface::async_interface {
      public:
       void SendParam(::grpc::ClientContext* context, const ::NonInteractiveOT::Param* request, ::NonInteractiveOT::Reply* response, std::function<void(::grpc::Status)>) override;
       void SendParam(::grpc::ClientContext* context, const ::NonInteractiveOT::Param* request, ::NonInteractiveOT::Reply* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void SendParams(::grpc::ClientContext* context, ::NonInteractiveOT::Reply* response, ::grpc::ClientWriteReactor< ::NonInteractiveOT::Param>* reactor) override;
+      void SendCipherText(::grpc::ClientContext* context, ::NonInteractiveOT::Reply* response, ::grpc::ClientWriteReactor< ::NonInteractiveOT::CipherText>* reactor) override;
      private:
       friend class Stub;
       explicit async(Stub* stub): stub_(stub) { }
@@ -83,7 +129,15 @@ class OT final {
     class async async_stub_{this};
     ::grpc::ClientAsyncResponseReader< ::NonInteractiveOT::Reply>* AsyncSendParamRaw(::grpc::ClientContext* context, const ::NonInteractiveOT::Param& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::NonInteractiveOT::Reply>* PrepareAsyncSendParamRaw(::grpc::ClientContext* context, const ::NonInteractiveOT::Param& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientWriter< ::NonInteractiveOT::Param>* SendParamsRaw(::grpc::ClientContext* context, ::NonInteractiveOT::Reply* response) override;
+    ::grpc::ClientAsyncWriter< ::NonInteractiveOT::Param>* AsyncSendParamsRaw(::grpc::ClientContext* context, ::NonInteractiveOT::Reply* response, ::grpc::CompletionQueue* cq, void* tag) override;
+    ::grpc::ClientAsyncWriter< ::NonInteractiveOT::Param>* PrepareAsyncSendParamsRaw(::grpc::ClientContext* context, ::NonInteractiveOT::Reply* response, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientWriter< ::NonInteractiveOT::CipherText>* SendCipherTextRaw(::grpc::ClientContext* context, ::NonInteractiveOT::Reply* response) override;
+    ::grpc::ClientAsyncWriter< ::NonInteractiveOT::CipherText>* AsyncSendCipherTextRaw(::grpc::ClientContext* context, ::NonInteractiveOT::Reply* response, ::grpc::CompletionQueue* cq, void* tag) override;
+    ::grpc::ClientAsyncWriter< ::NonInteractiveOT::CipherText>* PrepareAsyncSendCipherTextRaw(::grpc::ClientContext* context, ::NonInteractiveOT::Reply* response, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_SendParam_;
+    const ::grpc::internal::RpcMethod rpcmethod_SendParams_;
+    const ::grpc::internal::RpcMethod rpcmethod_SendCipherText_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -92,6 +146,8 @@ class OT final {
     Service();
     virtual ~Service();
     virtual ::grpc::Status SendParam(::grpc::ServerContext* context, const ::NonInteractiveOT::Param* request, ::NonInteractiveOT::Reply* response);
+    virtual ::grpc::Status SendParams(::grpc::ServerContext* context, ::grpc::ServerReader< ::NonInteractiveOT::Param>* reader, ::NonInteractiveOT::Reply* response);
+    virtual ::grpc::Status SendCipherText(::grpc::ServerContext* context, ::grpc::ServerReader< ::NonInteractiveOT::CipherText>* reader, ::NonInteractiveOT::Reply* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_SendParam : public BaseClass {
@@ -113,7 +169,47 @@ class OT final {
       ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_SendParam<Service > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_SendParams : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_SendParams() {
+      ::grpc::Service::MarkMethodAsync(1);
+    }
+    ~WithAsyncMethod_SendParams() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SendParams(::grpc::ServerContext* /*context*/, ::grpc::ServerReader< ::NonInteractiveOT::Param>* /*reader*/, ::NonInteractiveOT::Reply* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestSendParams(::grpc::ServerContext* context, ::grpc::ServerAsyncReader< ::NonInteractiveOT::Reply, ::NonInteractiveOT::Param>* reader, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncClientStreaming(1, context, reader, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_SendCipherText : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_SendCipherText() {
+      ::grpc::Service::MarkMethodAsync(2);
+    }
+    ~WithAsyncMethod_SendCipherText() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SendCipherText(::grpc::ServerContext* /*context*/, ::grpc::ServerReader< ::NonInteractiveOT::CipherText>* /*reader*/, ::NonInteractiveOT::Reply* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestSendCipherText(::grpc::ServerContext* context, ::grpc::ServerAsyncReader< ::NonInteractiveOT::Reply, ::NonInteractiveOT::CipherText>* reader, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncClientStreaming(2, context, reader, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_SendParam<WithAsyncMethod_SendParams<WithAsyncMethod_SendCipherText<Service > > > AsyncService;
   template <class BaseClass>
   class WithCallbackMethod_SendParam : public BaseClass {
    private:
@@ -141,7 +237,51 @@ class OT final {
     virtual ::grpc::ServerUnaryReactor* SendParam(
       ::grpc::CallbackServerContext* /*context*/, const ::NonInteractiveOT::Param* /*request*/, ::NonInteractiveOT::Reply* /*response*/)  { return nullptr; }
   };
-  typedef WithCallbackMethod_SendParam<Service > CallbackService;
+  template <class BaseClass>
+  class WithCallbackMethod_SendParams : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_SendParams() {
+      ::grpc::Service::MarkMethodCallback(1,
+          new ::grpc::internal::CallbackClientStreamingHandler< ::NonInteractiveOT::Param, ::NonInteractiveOT::Reply>(
+            [this](
+                   ::grpc::CallbackServerContext* context, ::NonInteractiveOT::Reply* response) { return this->SendParams(context, response); }));
+    }
+    ~WithCallbackMethod_SendParams() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SendParams(::grpc::ServerContext* /*context*/, ::grpc::ServerReader< ::NonInteractiveOT::Param>* /*reader*/, ::NonInteractiveOT::Reply* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerReadReactor< ::NonInteractiveOT::Param>* SendParams(
+      ::grpc::CallbackServerContext* /*context*/, ::NonInteractiveOT::Reply* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithCallbackMethod_SendCipherText : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_SendCipherText() {
+      ::grpc::Service::MarkMethodCallback(2,
+          new ::grpc::internal::CallbackClientStreamingHandler< ::NonInteractiveOT::CipherText, ::NonInteractiveOT::Reply>(
+            [this](
+                   ::grpc::CallbackServerContext* context, ::NonInteractiveOT::Reply* response) { return this->SendCipherText(context, response); }));
+    }
+    ~WithCallbackMethod_SendCipherText() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SendCipherText(::grpc::ServerContext* /*context*/, ::grpc::ServerReader< ::NonInteractiveOT::CipherText>* /*reader*/, ::NonInteractiveOT::Reply* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerReadReactor< ::NonInteractiveOT::CipherText>* SendCipherText(
+      ::grpc::CallbackServerContext* /*context*/, ::NonInteractiveOT::Reply* /*response*/)  { return nullptr; }
+  };
+  typedef WithCallbackMethod_SendParam<WithCallbackMethod_SendParams<WithCallbackMethod_SendCipherText<Service > > > CallbackService;
   typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_SendParam : public BaseClass {
@@ -156,6 +296,40 @@ class OT final {
     }
     // disable synchronous version of this method
     ::grpc::Status SendParam(::grpc::ServerContext* /*context*/, const ::NonInteractiveOT::Param* /*request*/, ::NonInteractiveOT::Reply* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_SendParams : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_SendParams() {
+      ::grpc::Service::MarkMethodGeneric(1);
+    }
+    ~WithGenericMethod_SendParams() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SendParams(::grpc::ServerContext* /*context*/, ::grpc::ServerReader< ::NonInteractiveOT::Param>* /*reader*/, ::NonInteractiveOT::Reply* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_SendCipherText : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_SendCipherText() {
+      ::grpc::Service::MarkMethodGeneric(2);
+    }
+    ~WithGenericMethod_SendCipherText() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SendCipherText(::grpc::ServerContext* /*context*/, ::grpc::ServerReader< ::NonInteractiveOT::CipherText>* /*reader*/, ::NonInteractiveOT::Reply* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -181,6 +355,46 @@ class OT final {
     }
   };
   template <class BaseClass>
+  class WithRawMethod_SendParams : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_SendParams() {
+      ::grpc::Service::MarkMethodRaw(1);
+    }
+    ~WithRawMethod_SendParams() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SendParams(::grpc::ServerContext* /*context*/, ::grpc::ServerReader< ::NonInteractiveOT::Param>* /*reader*/, ::NonInteractiveOT::Reply* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestSendParams(::grpc::ServerContext* context, ::grpc::ServerAsyncReader< ::grpc::ByteBuffer, ::grpc::ByteBuffer>* reader, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncClientStreaming(1, context, reader, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_SendCipherText : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_SendCipherText() {
+      ::grpc::Service::MarkMethodRaw(2);
+    }
+    ~WithRawMethod_SendCipherText() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SendCipherText(::grpc::ServerContext* /*context*/, ::grpc::ServerReader< ::NonInteractiveOT::CipherText>* /*reader*/, ::NonInteractiveOT::Reply* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestSendCipherText(::grpc::ServerContext* context, ::grpc::ServerAsyncReader< ::grpc::ByteBuffer, ::grpc::ByteBuffer>* reader, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncClientStreaming(2, context, reader, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithRawCallbackMethod_SendParam : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
@@ -201,6 +415,50 @@ class OT final {
     }
     virtual ::grpc::ServerUnaryReactor* SendParam(
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_SendParams : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_SendParams() {
+      ::grpc::Service::MarkMethodRawCallback(1,
+          new ::grpc::internal::CallbackClientStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, ::grpc::ByteBuffer* response) { return this->SendParams(context, response); }));
+    }
+    ~WithRawCallbackMethod_SendParams() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SendParams(::grpc::ServerContext* /*context*/, ::grpc::ServerReader< ::NonInteractiveOT::Param>* /*reader*/, ::NonInteractiveOT::Reply* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerReadReactor< ::grpc::ByteBuffer>* SendParams(
+      ::grpc::CallbackServerContext* /*context*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_SendCipherText : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_SendCipherText() {
+      ::grpc::Service::MarkMethodRawCallback(2,
+          new ::grpc::internal::CallbackClientStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, ::grpc::ByteBuffer* response) { return this->SendCipherText(context, response); }));
+    }
+    ~WithRawCallbackMethod_SendCipherText() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SendCipherText(::grpc::ServerContext* /*context*/, ::grpc::ServerReader< ::NonInteractiveOT::CipherText>* /*reader*/, ::NonInteractiveOT::Reply* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerReadReactor< ::grpc::ByteBuffer>* SendCipherText(
+      ::grpc::CallbackServerContext* /*context*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_SendParam : public BaseClass {

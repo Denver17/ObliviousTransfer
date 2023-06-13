@@ -155,6 +155,32 @@ NonInteractiveOT_chooser/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/NonInteractiveOT_chooser.dir/build.make CMakeFiles/NonInteractiveOT_chooser.dir/build
 .PHONY : NonInteractiveOT_chooser/fast
 
+#=============================================================================
+# Target rules for targets named OTChannels_sender
+
+# Build rule for target.
+OTChannels_sender: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 OTChannels_sender
+.PHONY : OTChannels_sender
+
+# fast build rule for target.
+OTChannels_sender/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OTChannels_sender.dir/build.make CMakeFiles/OTChannels_sender.dir/build
+.PHONY : OTChannels_sender/fast
+
+#=============================================================================
+# Target rules for targets named OTChannels_chooser
+
+# Build rule for target.
+OTChannels_chooser: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 OTChannels_chooser
+.PHONY : OTChannels_chooser
+
+# fast build rule for target.
+OTChannels_chooser/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OTChannels_chooser.dir/build.make CMakeFiles/OTChannels_chooser.dir/build
+.PHONY : OTChannels_chooser/fast
+
 NonInteractiveOT.grpc.pb.o: NonInteractiveOT.grpc.pb.cc.o
 .PHONY : NonInteractiveOT.grpc.pb.o
 
@@ -251,6 +277,54 @@ NonInteractiveOT_sender.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/NonInteractiveOT_sender.dir/build.make CMakeFiles/NonInteractiveOT_sender.dir/NonInteractiveOT_sender.cc.s
 .PHONY : NonInteractiveOT_sender.cc.s
 
+OTChannels_chooser.o: OTChannels_chooser.cc.o
+.PHONY : OTChannels_chooser.o
+
+# target to build an object file
+OTChannels_chooser.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OTChannels_chooser.dir/build.make CMakeFiles/OTChannels_chooser.dir/OTChannels_chooser.cc.o
+.PHONY : OTChannels_chooser.cc.o
+
+OTChannels_chooser.i: OTChannels_chooser.cc.i
+.PHONY : OTChannels_chooser.i
+
+# target to preprocess a source file
+OTChannels_chooser.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OTChannels_chooser.dir/build.make CMakeFiles/OTChannels_chooser.dir/OTChannels_chooser.cc.i
+.PHONY : OTChannels_chooser.cc.i
+
+OTChannels_chooser.s: OTChannels_chooser.cc.s
+.PHONY : OTChannels_chooser.s
+
+# target to generate assembly for a file
+OTChannels_chooser.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OTChannels_chooser.dir/build.make CMakeFiles/OTChannels_chooser.dir/OTChannels_chooser.cc.s
+.PHONY : OTChannels_chooser.cc.s
+
+OTChannels_sender.o: OTChannels_sender.cc.o
+.PHONY : OTChannels_sender.o
+
+# target to build an object file
+OTChannels_sender.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OTChannels_sender.dir/build.make CMakeFiles/OTChannels_sender.dir/OTChannels_sender.cc.o
+.PHONY : OTChannels_sender.cc.o
+
+OTChannels_sender.i: OTChannels_sender.cc.i
+.PHONY : OTChannels_sender.i
+
+# target to preprocess a source file
+OTChannels_sender.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OTChannels_sender.dir/build.make CMakeFiles/OTChannels_sender.dir/OTChannels_sender.cc.i
+.PHONY : OTChannels_sender.cc.i
+
+OTChannels_sender.s: OTChannels_sender.cc.s
+.PHONY : OTChannels_sender.s
+
+# target to generate assembly for a file
+OTChannels_sender.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OTChannels_sender.dir/build.make CMakeFiles/OTChannels_sender.dir/OTChannels_sender.cc.s
+.PHONY : OTChannels_sender.cc.s
+
 home/denver/ot/ObliviousTransfer/cpp/CryptoTools/RWfile.o: home/denver/ot/ObliviousTransfer/cpp/CryptoTools/RWfile.cc.o
 .PHONY : home/denver/ot/ObliviousTransfer/cpp/CryptoTools/RWfile.o
 
@@ -299,6 +373,30 @@ home/denver/ot/ObliviousTransfer/cpp/CryptoTools/StringCharArray.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw_grpc_proto.dir/build.make CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/StringCharArray.cc.s
 .PHONY : home/denver/ot/ObliviousTransfer/cpp/CryptoTools/StringCharArray.cc.s
 
+home/denver/ot/ObliviousTransfer/cpp/CryptoTools/ZZCal.o: home/denver/ot/ObliviousTransfer/cpp/CryptoTools/ZZCal.cc.o
+.PHONY : home/denver/ot/ObliviousTransfer/cpp/CryptoTools/ZZCal.o
+
+# target to build an object file
+home/denver/ot/ObliviousTransfer/cpp/CryptoTools/ZZCal.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw_grpc_proto.dir/build.make CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/ZZCal.cc.o
+.PHONY : home/denver/ot/ObliviousTransfer/cpp/CryptoTools/ZZCal.cc.o
+
+home/denver/ot/ObliviousTransfer/cpp/CryptoTools/ZZCal.i: home/denver/ot/ObliviousTransfer/cpp/CryptoTools/ZZCal.cc.i
+.PHONY : home/denver/ot/ObliviousTransfer/cpp/CryptoTools/ZZCal.i
+
+# target to preprocess a source file
+home/denver/ot/ObliviousTransfer/cpp/CryptoTools/ZZCal.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw_grpc_proto.dir/build.make CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/ZZCal.cc.i
+.PHONY : home/denver/ot/ObliviousTransfer/cpp/CryptoTools/ZZCal.cc.i
+
+home/denver/ot/ObliviousTransfer/cpp/CryptoTools/ZZCal.s: home/denver/ot/ObliviousTransfer/cpp/CryptoTools/ZZCal.cc.s
+.PHONY : home/denver/ot/ObliviousTransfer/cpp/CryptoTools/ZZCal.s
+
+# target to generate assembly for a file
+home/denver/ot/ObliviousTransfer/cpp/CryptoTools/ZZCal.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw_grpc_proto.dir/build.make CMakeFiles/hw_grpc_proto.dir/home/denver/ot/ObliviousTransfer/cpp/CryptoTools/ZZCal.cc.s
+.PHONY : home/denver/ot/ObliviousTransfer/cpp/CryptoTools/ZZCal.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -309,6 +407,8 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... NonInteractiveOT_chooser"
 	@echo "... NonInteractiveOT_sender"
+	@echo "... OTChannels_chooser"
+	@echo "... OTChannels_sender"
 	@echo "... hw_grpc_proto"
 	@echo "... NonInteractiveOT.grpc.pb.o"
 	@echo "... NonInteractiveOT.grpc.pb.i"
@@ -322,12 +422,21 @@ help:
 	@echo "... NonInteractiveOT_sender.o"
 	@echo "... NonInteractiveOT_sender.i"
 	@echo "... NonInteractiveOT_sender.s"
+	@echo "... OTChannels_chooser.o"
+	@echo "... OTChannels_chooser.i"
+	@echo "... OTChannels_chooser.s"
+	@echo "... OTChannels_sender.o"
+	@echo "... OTChannels_sender.i"
+	@echo "... OTChannels_sender.s"
 	@echo "... home/denver/ot/ObliviousTransfer/cpp/CryptoTools/RWfile.o"
 	@echo "... home/denver/ot/ObliviousTransfer/cpp/CryptoTools/RWfile.i"
 	@echo "... home/denver/ot/ObliviousTransfer/cpp/CryptoTools/RWfile.s"
 	@echo "... home/denver/ot/ObliviousTransfer/cpp/CryptoTools/StringCharArray.o"
 	@echo "... home/denver/ot/ObliviousTransfer/cpp/CryptoTools/StringCharArray.i"
 	@echo "... home/denver/ot/ObliviousTransfer/cpp/CryptoTools/StringCharArray.s"
+	@echo "... home/denver/ot/ObliviousTransfer/cpp/CryptoTools/ZZCal.o"
+	@echo "... home/denver/ot/ObliviousTransfer/cpp/CryptoTools/ZZCal.i"
+	@echo "... home/denver/ot/ObliviousTransfer/cpp/CryptoTools/ZZCal.s"
 .PHONY : help
 
 

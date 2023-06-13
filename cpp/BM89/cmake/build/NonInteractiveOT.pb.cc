@@ -67,8 +67,34 @@ struct ReplyDefaultTypeInternal {
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ReplyDefaultTypeInternal _Reply_default_instance_;
+template <typename>
+PROTOBUF_CONSTEXPR CipherText::CipherText(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.ct0_)*/ {
+    &::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized {}
+  }
+
+  , /*decltype(_impl_.ct1_)*/ {
+    &::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized {}
+  }
+
+  , /*decltype(_impl_.len0_)*/ 0
+
+  , /*decltype(_impl_.len1_)*/ 0
+
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct CipherTextDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR CipherTextDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~CipherTextDefaultTypeInternal() {}
+  union {
+    CipherText _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CipherTextDefaultTypeInternal _CipherText_default_instance_;
 }  // namespace NonInteractiveOT
-static ::_pb::Metadata file_level_metadata_NonInteractiveOT_2eproto[2];
+static ::_pb::Metadata file_level_metadata_NonInteractiveOT_2eproto[3];
 static constexpr const ::_pb::EnumDescriptor**
     file_level_enum_descriptors_NonInteractiveOT_2eproto = nullptr;
 static constexpr const ::_pb::ServiceDescriptor**
@@ -96,38 +122,58 @@ const ::uint32_t TableStruct_NonInteractiveOT_2eproto::offsets[] PROTOBUF_SECTIO
     ~0u,  // no _split_
     ~0u,  // no sizeof(Split)
     PROTOBUF_FIELD_OFFSET(::NonInteractiveOT::Reply, _impl_.message_),
+    ~0u,  // no _has_bits_
+    PROTOBUF_FIELD_OFFSET(::NonInteractiveOT::CipherText, _internal_metadata_),
+    ~0u,  // no _extensions_
+    ~0u,  // no _oneof_case_
+    ~0u,  // no _weak_field_map_
+    ~0u,  // no _inlined_string_donated_
+    ~0u,  // no _split_
+    ~0u,  // no sizeof(Split)
+    PROTOBUF_FIELD_OFFSET(::NonInteractiveOT::CipherText, _impl_.ct0_),
+    PROTOBUF_FIELD_OFFSET(::NonInteractiveOT::CipherText, _impl_.ct1_),
+    PROTOBUF_FIELD_OFFSET(::NonInteractiveOT::CipherText, _impl_.len0_),
+    PROTOBUF_FIELD_OFFSET(::NonInteractiveOT::CipherText, _impl_.len1_),
 };
 
 static const ::_pbi::MigrationSchema
     schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
         { 0, -1, -1, sizeof(::NonInteractiveOT::Param)},
         { 12, -1, -1, sizeof(::NonInteractiveOT::Reply)},
+        { 21, -1, -1, sizeof(::NonInteractiveOT::CipherText)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
     &::NonInteractiveOT::_Param_default_instance_._instance,
     &::NonInteractiveOT::_Reply_default_instance_._instance,
+    &::NonInteractiveOT::_CipherText_default_instance_._instance,
 };
 const char descriptor_table_protodef_NonInteractiveOT_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
     "\n\026NonInteractiveOT.proto\022\020NonInteractive"
     "OT\"\?\n\005Param\022\016\n\006alpha0\030\001 \001(\t\022\016\n\006alpha1\030\002 "
     "\001(\t\022\n\n\002r0\030\003 \001(\t\022\n\n\002r1\030\004 \001(\t\"\030\n\005Reply\022\017\n\007"
-    "message\030\001 \001(\t2E\n\002OT\022\?\n\tSendParam\022\027.NonIn"
-    "teractiveOT.Param\032\027.NonInteractiveOT.Rep"
-    "ly\"\000BB\n!io.grpc.examples.NonInteractiveO"
-    "TB\025NonInteractiveOTProtoP\001\242\002\003HLWb\006proto3"
+    "message\030\001 \001(\t\"B\n\nCipherText\022\013\n\003ct0\030\001 \001(\t"
+    "\022\013\n\003ct1\030\002 \001(\t\022\014\n\004len0\030\003 \001(\005\022\014\n\004len1\030\004 \001("
+    "\0052\326\001\n\002OT\022\?\n\tSendParam\022\027.NonInteractiveOT"
+    ".Param\032\027.NonInteractiveOT.Reply\"\000\022B\n\nSen"
+    "dParams\022\027.NonInteractiveOT.Param\032\027.NonIn"
+    "teractiveOT.Reply\"\000(\001\022K\n\016SendCipherText\022"
+    "\034.NonInteractiveOT.CipherText\032\027.NonInter"
+    "activeOT.Reply\"\000(\001BB\n!io.grpc.examples.N"
+    "onInteractiveOTB\025NonInteractiveOTProtoP\001"
+    "\242\002\003HLWb\006proto3"
 };
 static ::absl::once_flag descriptor_table_NonInteractiveOT_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_NonInteractiveOT_2eproto = {
     false,
     false,
-    280,
+    494,
     descriptor_table_protodef_NonInteractiveOT_2eproto,
     "NonInteractiveOT.proto",
     &descriptor_table_NonInteractiveOT_2eproto_once,
     nullptr,
     0,
-    2,
+    3,
     schemas,
     file_default_instances,
     TableStruct_NonInteractiveOT_2eproto::offsets,
@@ -687,6 +733,319 @@ void Reply::InternalSwap(Reply* other) {
       &descriptor_table_NonInteractiveOT_2eproto_getter, &descriptor_table_NonInteractiveOT_2eproto_once,
       file_level_metadata_NonInteractiveOT_2eproto[1]);
 }
+// ===================================================================
+
+class CipherText::_Internal {
+ public:
+};
+
+CipherText::CipherText(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:NonInteractiveOT.CipherText)
+}
+CipherText::CipherText(const CipherText& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  CipherText* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.ct0_) {}
+
+    , decltype(_impl_.ct1_) {}
+
+    , decltype(_impl_.len0_) {}
+
+    , decltype(_impl_.len1_) {}
+
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _impl_.ct0_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.ct0_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_ct0().empty()) {
+    _this->_impl_.ct0_.Set(from._internal_ct0(), _this->GetArenaForAllocation());
+  }
+  _impl_.ct1_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.ct1_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_ct1().empty()) {
+    _this->_impl_.ct1_.Set(from._internal_ct1(), _this->GetArenaForAllocation());
+  }
+  ::memcpy(&_impl_.len0_, &from._impl_.len0_,
+    static_cast<::size_t>(reinterpret_cast<char*>(&_impl_.len1_) -
+    reinterpret_cast<char*>(&_impl_.len0_)) + sizeof(_impl_.len1_));
+  // @@protoc_insertion_point(copy_constructor:NonInteractiveOT.CipherText)
+}
+
+inline void CipherText::SharedCtor(::_pb::Arena* arena) {
+  (void)arena;
+  new (&_impl_) Impl_{
+      decltype(_impl_.ct0_) {}
+
+    , decltype(_impl_.ct1_) {}
+
+    , decltype(_impl_.len0_) { 0 }
+
+    , decltype(_impl_.len1_) { 0 }
+
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.ct0_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.ct0_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.ct1_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.ct1_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+CipherText::~CipherText() {
+  // @@protoc_insertion_point(destructor:NonInteractiveOT.CipherText)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void CipherText::SharedDtor() {
+  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.ct0_.Destroy();
+  _impl_.ct1_.Destroy();
+}
+
+void CipherText::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void CipherText::Clear() {
+// @@protoc_insertion_point(message_clear_start:NonInteractiveOT.CipherText)
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.ct0_.ClearToEmpty();
+  _impl_.ct1_.ClearToEmpty();
+  ::memset(&_impl_.len0_, 0, static_cast<::size_t>(
+      reinterpret_cast<char*>(&_impl_.len1_) -
+      reinterpret_cast<char*>(&_impl_.len0_)) + sizeof(_impl_.len1_));
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* CipherText::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string ct0 = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_ct0();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "NonInteractiveOT.CipherText.ct0"));
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // string ct1 = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_ct1();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "NonInteractiveOT.CipherText.ct1"));
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 len0 = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 24)) {
+          _impl_.len0_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 len1 = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 32)) {
+          _impl_.len1_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+::uint8_t* CipherText::_InternalSerialize(
+    ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:NonInteractiveOT.CipherText)
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string ct0 = 1;
+  if (!this->_internal_ct0().empty()) {
+    const std::string& _s = this->_internal_ct0();
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE, "NonInteractiveOT.CipherText.ct0");
+    target = stream->WriteStringMaybeAliased(1, _s, target);
+  }
+
+  // string ct1 = 2;
+  if (!this->_internal_ct1().empty()) {
+    const std::string& _s = this->_internal_ct1();
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE, "NonInteractiveOT.CipherText.ct1");
+    target = stream->WriteStringMaybeAliased(2, _s, target);
+  }
+
+  // int32 len0 = 3;
+  if (this->_internal_len0() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        3, this->_internal_len0(), target);
+  }
+
+  // int32 len1 = 4;
+  if (this->_internal_len1() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        4, this->_internal_len1(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:NonInteractiveOT.CipherText)
+  return target;
+}
+
+::size_t CipherText::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:NonInteractiveOT.CipherText)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string ct0 = 1;
+  if (!this->_internal_ct0().empty()) {
+    total_size += 1 + ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+                                    this->_internal_ct0());
+  }
+
+  // string ct1 = 2;
+  if (!this->_internal_ct1().empty()) {
+    total_size += 1 + ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+                                    this->_internal_ct1());
+  }
+
+  // int32 len0 = 3;
+  if (this->_internal_len0() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
+        this->_internal_len0());
+  }
+
+  // int32 len1 = 4;
+  if (this->_internal_len1() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
+        this->_internal_len1());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData CipherText::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    CipherText::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*CipherText::GetClassData() const { return &_class_data_; }
+
+
+void CipherText::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<CipherText*>(&to_msg);
+  auto& from = static_cast<const CipherText&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:NonInteractiveOT.CipherText)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_ct0().empty()) {
+    _this->_internal_set_ct0(from._internal_ct0());
+  }
+  if (!from._internal_ct1().empty()) {
+    _this->_internal_set_ct1(from._internal_ct1());
+  }
+  if (from._internal_len0() != 0) {
+    _this->_internal_set_len0(from._internal_len0());
+  }
+  if (from._internal_len1() != 0) {
+    _this->_internal_set_len1(from._internal_len1());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void CipherText::CopyFrom(const CipherText& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:NonInteractiveOT.CipherText)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CipherText::IsInitialized() const {
+  return true;
+}
+
+void CipherText::InternalSwap(CipherText* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.ct0_, lhs_arena,
+                                       &other->_impl_.ct0_, rhs_arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.ct1_, lhs_arena,
+                                       &other->_impl_.ct1_, rhs_arena);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(CipherText, _impl_.len1_)
+      + sizeof(CipherText::_impl_.len1_)
+      - PROTOBUF_FIELD_OFFSET(CipherText, _impl_.len0_)>(
+          reinterpret_cast<char*>(&_impl_.len0_),
+          reinterpret_cast<char*>(&other->_impl_.len0_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata CipherText::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_NonInteractiveOT_2eproto_getter, &descriptor_table_NonInteractiveOT_2eproto_once,
+      file_level_metadata_NonInteractiveOT_2eproto[2]);
+}
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace NonInteractiveOT
 PROTOBUF_NAMESPACE_OPEN
@@ -697,6 +1056,10 @@ Arena::CreateMaybeMessage< ::NonInteractiveOT::Param >(Arena* arena) {
 template<> PROTOBUF_NOINLINE ::NonInteractiveOT::Reply*
 Arena::CreateMaybeMessage< ::NonInteractiveOT::Reply >(Arena* arena) {
   return Arena::CreateMessageInternal< ::NonInteractiveOT::Reply >(arena);
+}
+template<> PROTOBUF_NOINLINE ::NonInteractiveOT::CipherText*
+Arena::CreateMaybeMessage< ::NonInteractiveOT::CipherText >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::NonInteractiveOT::CipherText >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 // @@protoc_insertion_point(global_scope)

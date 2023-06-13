@@ -10,6 +10,8 @@ package NonInteractiveOT;
 
 service OT {
   rpc SendParam (Param) returns (Reply) {}
+  rpc SendParams (stream Param) returns (Reply) {}
+  rpc SendCipherText (stream CipherText) returns (Reply) {}
 }
 
 
@@ -22,4 +24,11 @@ message Param {
 
 message Reply {
   string message = 1;
+}
+
+message CipherText {
+  string ct0 = 1;
+  string ct1 = 2;
+  int32 len0 = 3;
+  int32 len1 = 4;
 }

@@ -1,5 +1,7 @@
 /home/denver/ot/ObliviousTransfer/cpp/BM89/cmake/build/CMakeFiles/hw_grpc_proto.dir
 /home/denver/ot/ObliviousTransfer/cpp/BM89/cmake/build/CMakeFiles/NonInteractiveOT_sender.dir
 /home/denver/ot/ObliviousTransfer/cpp/BM89/cmake/build/CMakeFiles/NonInteractiveOT_chooser.dir
+/home/denver/ot/ObliviousTransfer/cpp/BM89/cmake/build/CMakeFiles/OTChannels_sender.dir
+/home/denver/ot/ObliviousTransfer/cpp/BM89/cmake/build/CMakeFiles/OTChannels_chooser.dir
 /home/denver/ot/ObliviousTransfer/cpp/BM89/cmake/build/CMakeFiles/edit_cache.dir
 /home/denver/ot/ObliviousTransfer/cpp/BM89/cmake/build/CMakeFiles/rebuild_cache.dir

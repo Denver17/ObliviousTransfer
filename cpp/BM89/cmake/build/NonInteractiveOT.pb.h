@@ -51,6 +51,9 @@ struct TableStruct_NonInteractiveOT_2eproto {
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable
     descriptor_table_NonInteractiveOT_2eproto;
 namespace NonInteractiveOT {
+class CipherText;
+struct CipherTextDefaultTypeInternal;
+extern CipherTextDefaultTypeInternal _CipherText_default_instance_;
 class Param;
 struct ParamDefaultTypeInternal;
 extern ParamDefaultTypeInternal _Param_default_instance_;
@@ -59,6 +62,8 @@ struct ReplyDefaultTypeInternal;
 extern ReplyDefaultTypeInternal _Reply_default_instance_;
 }  // namespace NonInteractiveOT
 PROTOBUF_NAMESPACE_OPEN
+template <>
+::NonInteractiveOT::CipherText* Arena::CreateMaybeMessage<::NonInteractiveOT::CipherText>(Arena*);
 template <>
 ::NonInteractiveOT::Param* Arena::CreateMaybeMessage<::NonInteractiveOT::Param>(Arena*);
 template <>
@@ -466,6 +471,217 @@ class Reply final :
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_NonInteractiveOT_2eproto;
+};// -------------------------------------------------------------------
+
+class CipherText final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:NonInteractiveOT.CipherText) */ {
+ public:
+  inline CipherText() : CipherText(nullptr) {}
+  ~CipherText() override;
+  template<typename = void>
+  explicit PROTOBUF_CONSTEXPR CipherText(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  CipherText(const CipherText& from);
+  CipherText(CipherText&& from) noexcept
+    : CipherText() {
+    *this = ::std::move(from);
+  }
+
+  inline CipherText& operator=(const CipherText& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CipherText& operator=(CipherText&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const CipherText& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const CipherText* internal_default_instance() {
+    return reinterpret_cast<const CipherText*>(
+               &_CipherText_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    2;
+
+  friend void swap(CipherText& a, CipherText& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CipherText* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(CipherText* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  CipherText* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<CipherText>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const CipherText& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const CipherText& from) {
+    CipherText::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  ::size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CipherText* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() {
+    return "NonInteractiveOT.CipherText";
+  }
+  protected:
+  explicit CipherText(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kCt0FieldNumber = 1,
+    kCt1FieldNumber = 2,
+    kLen0FieldNumber = 3,
+    kLen1FieldNumber = 4,
+  };
+  // string ct0 = 1;
+  void clear_ct0() ;
+  const std::string& ct0() const;
+
+
+
+
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_ct0(Arg_&& arg, Args_... args);
+  std::string* mutable_ct0();
+  PROTOBUF_NODISCARD std::string* release_ct0();
+  void set_allocated_ct0(std::string* ptr);
+
+  private:
+  const std::string& _internal_ct0() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_ct0(
+      const std::string& value);
+  std::string* _internal_mutable_ct0();
+
+  public:
+  // string ct1 = 2;
+  void clear_ct1() ;
+  const std::string& ct1() const;
+
+
+
+
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_ct1(Arg_&& arg, Args_... args);
+  std::string* mutable_ct1();
+  PROTOBUF_NODISCARD std::string* release_ct1();
+  void set_allocated_ct1(std::string* ptr);
+
+  private:
+  const std::string& _internal_ct1() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_ct1(
+      const std::string& value);
+  std::string* _internal_mutable_ct1();
+
+  public:
+  // int32 len0 = 3;
+  void clear_len0() ;
+  ::int32_t len0() const;
+  void set_len0(::int32_t value);
+
+  private:
+  ::int32_t _internal_len0() const;
+  void _internal_set_len0(::int32_t value);
+
+  public:
+  // int32 len1 = 4;
+  void clear_len1() ;
+  ::int32_t len1() const;
+  void set_len1(::int32_t value);
+
+  private:
+  ::int32_t _internal_len1() const;
+  void _internal_set_len1(::int32_t value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:NonInteractiveOT.CipherText)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr ct0_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr ct1_;
+    ::int32_t len0_;
+    ::int32_t len1_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_NonInteractiveOT_2eproto;
 };
 
 // ===================================================================
@@ -721,6 +937,144 @@ inline void Reply::set_allocated_message(std::string* value) {
         }
   #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   // @@protoc_insertion_point(field_set_allocated:NonInteractiveOT.Reply.message)
+}
+
+// -------------------------------------------------------------------
+
+// CipherText
+
+// string ct0 = 1;
+inline void CipherText::clear_ct0() {
+  _impl_.ct0_.ClearToEmpty();
+}
+inline const std::string& CipherText::ct0() const {
+  // @@protoc_insertion_point(field_get:NonInteractiveOT.CipherText.ct0)
+  return _internal_ct0();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void CipherText::set_ct0(Arg_&& arg,
+                                                     Args_... args) {
+  ;
+  _impl_.ct0_.Set(static_cast<Arg_&&>(arg), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:NonInteractiveOT.CipherText.ct0)
+}
+inline std::string* CipherText::mutable_ct0() {
+  std::string* _s = _internal_mutable_ct0();
+  // @@protoc_insertion_point(field_mutable:NonInteractiveOT.CipherText.ct0)
+  return _s;
+}
+inline const std::string& CipherText::_internal_ct0() const {
+  return _impl_.ct0_.Get();
+}
+inline void CipherText::_internal_set_ct0(const std::string& value) {
+  ;
+
+
+  _impl_.ct0_.Set(value, GetArenaForAllocation());
+}
+inline std::string* CipherText::_internal_mutable_ct0() {
+  ;
+  return _impl_.ct0_.Mutable( GetArenaForAllocation());
+}
+inline std::string* CipherText::release_ct0() {
+  // @@protoc_insertion_point(field_release:NonInteractiveOT.CipherText.ct0)
+  return _impl_.ct0_.Release();
+}
+inline void CipherText::set_allocated_ct0(std::string* value) {
+  _impl_.ct0_.SetAllocated(value, GetArenaForAllocation());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.ct0_.IsDefault()) {
+          _impl_.ct0_.Set("", GetArenaForAllocation());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:NonInteractiveOT.CipherText.ct0)
+}
+
+// string ct1 = 2;
+inline void CipherText::clear_ct1() {
+  _impl_.ct1_.ClearToEmpty();
+}
+inline const std::string& CipherText::ct1() const {
+  // @@protoc_insertion_point(field_get:NonInteractiveOT.CipherText.ct1)
+  return _internal_ct1();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void CipherText::set_ct1(Arg_&& arg,
+                                                     Args_... args) {
+  ;
+  _impl_.ct1_.Set(static_cast<Arg_&&>(arg), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:NonInteractiveOT.CipherText.ct1)
+}
+inline std::string* CipherText::mutable_ct1() {
+  std::string* _s = _internal_mutable_ct1();
+  // @@protoc_insertion_point(field_mutable:NonInteractiveOT.CipherText.ct1)
+  return _s;
+}
+inline const std::string& CipherText::_internal_ct1() const {
+  return _impl_.ct1_.Get();
+}
+inline void CipherText::_internal_set_ct1(const std::string& value) {
+  ;
+
+
+  _impl_.ct1_.Set(value, GetArenaForAllocation());
+}
+inline std::string* CipherText::_internal_mutable_ct1() {
+  ;
+  return _impl_.ct1_.Mutable( GetArenaForAllocation());
+}
+inline std::string* CipherText::release_ct1() {
+  // @@protoc_insertion_point(field_release:NonInteractiveOT.CipherText.ct1)
+  return _impl_.ct1_.Release();
+}
+inline void CipherText::set_allocated_ct1(std::string* value) {
+  _impl_.ct1_.SetAllocated(value, GetArenaForAllocation());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.ct1_.IsDefault()) {
+          _impl_.ct1_.Set("", GetArenaForAllocation());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:NonInteractiveOT.CipherText.ct1)
+}
+
+// int32 len0 = 3;
+inline void CipherText::clear_len0() {
+  _impl_.len0_ = 0;
+}
+inline ::int32_t CipherText::len0() const {
+  // @@protoc_insertion_point(field_get:NonInteractiveOT.CipherText.len0)
+  return _internal_len0();
+}
+inline void CipherText::set_len0(::int32_t value) {
+  _internal_set_len0(value);
+  // @@protoc_insertion_point(field_set:NonInteractiveOT.CipherText.len0)
+}
+inline ::int32_t CipherText::_internal_len0() const {
+  return _impl_.len0_;
+}
+inline void CipherText::_internal_set_len0(::int32_t value) {
+  ;
+  _impl_.len0_ = value;
+}
+
+// int32 len1 = 4;
+inline void CipherText::clear_len1() {
+  _impl_.len1_ = 0;
+}
+inline ::int32_t CipherText::len1() const {
+  // @@protoc_insertion_point(field_get:NonInteractiveOT.CipherText.len1)
+  return _internal_len1();
+}
+inline void CipherText::set_len1(::int32_t value) {
+  _internal_set_len1(value);
+  // @@protoc_insertion_point(field_set:NonInteractiveOT.CipherText.len1)
+}
+inline ::int32_t CipherText::_internal_len1() const {
+  return _impl_.len1_;
+}
+inline void CipherText::_internal_set_len1(::int32_t value) {
+  ;
+  _impl_.len1_ = value;
 }
 
 #ifdef __GNUC__
