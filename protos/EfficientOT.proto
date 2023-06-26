@@ -1,0 +1,30 @@
+
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.examples.EfficientOT";
+option java_outer_classname = "EfficientOTProto";
+option objc_class_prefix = "HLW";
+
+package EfficientOT;
+
+service OT {
+  rpc RequestParam (Request) returns (Param) {}
+  rpc SendCipherText (stream CipherText) returns (Reply) {}
+}
+
+message Request {
+    string R = 1;
+}
+
+message Param {
+  string PK0 = 1;
+}
+
+message Reply {
+  string message = 1;
+}
+
+message CipherText {
+  string ct = 1;
+}

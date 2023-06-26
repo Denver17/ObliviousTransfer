@@ -1,0 +1,5 @@
+/home/denver/ot/ObliviousTransfer/cpp/NP01/cmake/build/CMakeFiles/hw_grpc_proto.dir
+/home/denver/ot/ObliviousTransfer/cpp/NP01/cmake/build/CMakeFiles/EfficientOT_sender.dir
+/home/denver/ot/ObliviousTransfer/cpp/NP01/cmake/build/CMakeFiles/EfficientOT_chooser.dir
+/home/denver/ot/ObliviousTransfer/cpp/NP01/cmake/build/CMakeFiles/edit_cache.dir
+/home/denver/ot/ObliviousTransfer/cpp/NP01/cmake/build/CMakeFiles/rebuild_cache.dir
